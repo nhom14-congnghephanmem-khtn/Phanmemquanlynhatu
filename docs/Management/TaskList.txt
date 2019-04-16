@@ -1,0 +1,10 @@
+﻿1. Đăng nhập
+2. Tình trạng phạm nhân
+3. Danh Sách Phạm Nhân
+4. Danh Sách Phạm Nhân Chăm Sóc Trong Ngày
+5. Cập Nhật Tình Trạng Sức Khỏe Phạm Nhân
+6. Thêm Phạm Nhân
+7. Xuất Danh Sách Phạm Nhân Tiếp Nhận, Phóng Thích
+8. Hoạt Động Của Bộ Phân
+9. Gợi Ý Khẩu Phần Ăn
+10. Tình Trạng Cải Tạo
