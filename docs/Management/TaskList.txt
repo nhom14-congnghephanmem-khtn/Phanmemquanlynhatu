@@ -1,10 +1,51 @@
 ﻿1. Đăng nhập
+-> Trong
+
 2. Tình trạng phạm nhân
+-> Thai
 3. Danh Sách Phạm Nhân
+-> Thai
+
+
 4. Danh Sách Phạm Nhân Chăm Sóc Trong Ngày
+
 5. Cập Nhật Tình Trạng Sức Khỏe Phạm Nhân
+-> Trong
 6. Thêm Phạm Nhân
+-> Trong
 7. Xuất Danh Sách Phạm Nhân Tiếp Nhận, Phóng Thích
+-> Trong
+
 8. Hoạt Động Của Bộ Phân
+-> Tuan
 9. Gợi Ý Khẩu Phần Ăn
+-> Tuan
 10. Tình Trạng Cải Tạo
+-> Tuan
+
+Deadline: 19/05
+
+Buoc 1.
+
+MVC
+a. Dựng project
+	Client: coreUI (jquery + boostrap)
+-> Tuan
+	Server API: 
+		Logic layer: ASP.NET (C#)
+		Data Access layer: Entity FW
+		DB: SQL server.
+-> Trong
+Deadline: 28/04
+
+Buoc 2:
+b. Code màn hình mẫu (List + Insert)
+-> List: 9. Gợi Ý Khẩu Phần Ăn
+-> Tuan
+
+-> Insert: 6. Thêm Phạm Nhân
+-> Trong.
+-> Deadline: 05/05
+
+Nhung man hih con lai:
+19/05
