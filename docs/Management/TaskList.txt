@@ -8,6 +8,7 @@
 
 
 4. Danh Sách Phạm Nhân Chăm Sóc Trong Ngày
+-> Tuấn
 
 5. Cập Nhật Tình Trạng Sức Khỏe Phạm Nhân
 -> Trong
@@ -18,8 +19,10 @@
 
 8. Hoạt Động Của Bộ Phân
 -> Tuan
+
 9. Gợi Ý Khẩu Phần Ăn
 -> Tuan
+
 10. Tình Trạng Cải Tạo
 -> Tuan
 
