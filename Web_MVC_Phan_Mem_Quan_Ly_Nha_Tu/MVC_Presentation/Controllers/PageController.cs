@@ -13,5 +13,9 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public ActionResult TinhTrangCaiTao()
+        {
+            return View();
+        }
     }
 }

@@ -199,6 +199,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DangNhap\DangNhap.cshtml" />
     <Content Include="Views\Page\ThemPhamNhan.cshtml" />
+    <Content Include="Views\Page\TinhTrangCaiTao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
