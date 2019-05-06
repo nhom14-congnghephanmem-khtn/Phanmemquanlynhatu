@@ -1,0 +1,157 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <!--  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a class="navbar-brand" href="">Home</a></li>
+                    <li><a href="#">Giới Thiệu <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Tin Tức - Sự Kiện</a></li>
+                    <li><a href="#" title="">Đường Dây Nóng</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Đăng Nhập</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container" id="login">
+        <div class="row">
+            <div class="col-md-6 login-left">
+                <h4> Quản Lí Nhà Tù</h4>
+                <img src="~/Content/image/img-login.png" />
+            </div>
+            <div class="col-md-6 login-right">
+                <h4>Đăng Nhập</h4>
+
+                <div class="login-form">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">User</span>
+                                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">PassWord</span>
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer" class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Nhà Tù Miền Nam</h3>
+                    <ul>
+                        <li><a href="" title="">Nhà Tù Miền Nam 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Nam 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Nam 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Nam 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Nam 1</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Nhà Tù Miền Trung</h3>
+                    <ul>
+                        <li><a href="" title="">Nhà Tù Miền Trung 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Trung 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Trung 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Trung 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Trung 1</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Nhà Tù Miền Bắc</h3>
+                    <ul>
+                        <li><a href="" title="">Nhà Tù Miền Bắc 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Bắc 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Bắc 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Bắc 1</a></li>
+                        <li><a href="" title="">Nhà Tù Miền Bắc 1</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Liên Kết Website</h3>
+                    <ul>
+                        <li><a href="" title="">Bộ Công Thương</a></li>
+                        <li><a href="" title="">Bộ Công Thương</a></li>
+                        <li><a href="" title="">Bộ Công Thương</a></li>
+                        <li><a href="" title="">Bộ Công Thương</a></li>
+                        <li><a href="" title="">Bộ Công Thương</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p>Copyright <a href="" title="#">Nhóm 14</a></p>
+                </div>
+            </div>
+        </div>
+        <div id="back-top" style="display: block;"><a href="#top"> Về Đầu Trang </a></div>
+    </footer>
+    <script type='text/javascript'>
+		// hide #back-top first
+		$("#back-top").hide();
+
+    // fade in #back-top
+    $(function () {
+    	$(window).scroll(function () {
+    		if ($(this).scrollTop() > 100) {
+    			$('#back-top').fadeIn();
+    		} else {
+    			$('#back-top').fadeOut();
+    		}
+    	});
+
+        // scroll body to 0px on click
+        $('#back-top a').click(function () {
+        	$('body,html').animate({
+        		scrollTop: 0
+        	}, 800);
+        	return false;
+        });
+    });
+    </script>
+</body>
+</html>

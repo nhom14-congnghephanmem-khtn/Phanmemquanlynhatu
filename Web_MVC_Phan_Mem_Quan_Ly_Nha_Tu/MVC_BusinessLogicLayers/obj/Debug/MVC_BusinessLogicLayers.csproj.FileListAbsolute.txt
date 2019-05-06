@@ -1,0 +1,11 @@
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_BusinessLogicLayers.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_BusinessLogicLayers.pdb
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_DataAccessLayers.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_ValueObjects.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_DataAccessLayers.pdb
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\bin\Debug\MVC_ValueObjects.pdb
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\obj\Debug\MVC_BusinessLogicLayers.csprojAssemblyReference.cache
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\obj\Debug\MVC_BusinessLogicLayers.csproj.CoreCompileInputs.cache
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\obj\Debug\MVC_BusinessLogicLayers.csproj.CopyComplete
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\obj\Debug\MVC_BusinessLogicLayers.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_BusinessLogicLayers\obj\Debug\MVC_BusinessLogicLayers.pdb

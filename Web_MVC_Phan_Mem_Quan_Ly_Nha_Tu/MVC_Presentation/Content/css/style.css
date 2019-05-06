@@ -1,0 +1,222 @@
+﻿body {
+}
+
+#login {
+    padding-top: 150px;
+}
+
+.login-left, .login-right {
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 15px;
+    min-height: 276px !important;
+}
+
+    .login-left h4, .login-right h4 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .login-left img {
+        display: block;
+        margin: 0 auto;
+        height: 200px;
+    }
+
+/*********************************
+
+PAGE: TINHTRANGCAITAO;
+
+**********************************/
+.sidebar-left-cai-tao li {
+    list-style: none;
+    background: #F4F4F4;
+    border-color: white #CCC #CCC white;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 0 px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    color: #666;
+    display: block;
+    text-decoration: none;
+    margin: 0;
+}
+
+.sidebar-left-cai-tao ul, footer ul {
+    padding-left: 0px;
+}
+
+.sidebar-left-cai-tao li:hover {
+    background: #fff;
+}
+
+.sidebar-left-cai-tao span {
+    padding-right: 5px;
+}
+
+h3.title-tinhtrang {
+    margin-top: 0px !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tt-timkiem-xoa {
+    margin-bottom: 10px;
+    float: right;
+}
+
+.lable-mucdo {
+    padding-left: 0px !important;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    clear: both;
+}
+
+.tt-btnthem, .tt-huy-capnhat {
+    float: right;
+}
+
+.tt-huy-capnhat {
+    margin-top: 15px;
+    clear: both;
+}
+
+.form-tt {
+    clear: both;
+}
+
+/*********************************
+
+PAGE: DANHSACHPHAMNHAN
+
+**********************************/
+
+.table > thead:first-child > tr:first-child > th {
+    border-top: 2px solid #ddd !important;
+}
+
+.table td,
+.table th {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/*********************************
+
+PAGE: DANHSACHTUNHANCHAMSOCTRONGNGAY
+
+**********************************/
+.time-tn .col-md-2 {
+    padding-left: 0px;
+}
+
+.time-tn {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/*********************************
+
+PAGE: GOIYKHAUPHANAN
+
+**********************************/
+
+.btnxuatPDF {
+    width: 22% !important;
+    margin-bottom: 15px !important;
+}
+
+/*********************************
+
+PAGE: TIEPNHANPHONGTHICH
+
+**********************************/
+
+.btnPhongThich {
+    margin: 15px 0px !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/*********************************
+
+PAGE: FOOTER
+
+**********************************/
+footer {
+    background: url(../image/bg-footer.jpg) scroll repeat;
+    padding: 20px 0;
+    background-color: #2a2f35;
+    color: #ababab;
+    margin-top: 30px;
+    ;
+}
+
+body, p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Times New Roman', Times,serif !important;
+}
+
+footer a {
+    display: block;
+    color: #ababab;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+    footer a:hover {
+        color: yellowgreen !important;
+    }
+
+footer h3 {
+    border-bottom: 2px solid #e87352;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer p {
+    text-align: center;
+}
+
+#back-top {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    right: 32px;
+    bottom: 90px;
+    z-index: 1000;
+    max-width: 1440px;
+    text-align: right;
+}
+
+    #back-top a {
+        width: 58px;
+        height: 58px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: #363636;
+        font-size: 0;
+        display: flex;
+        opacity: .7;
+    }
+
+        #back-top a:after {
+            overflow: hidden;
+            display: inline-block;
+            width: 36px;
+            height: 22px;
+            margin: 18px auto;
+            background: url(../image/btn-gotop.png) no-repeat;
+            background-size: 100%;
+            content: '';
+        }

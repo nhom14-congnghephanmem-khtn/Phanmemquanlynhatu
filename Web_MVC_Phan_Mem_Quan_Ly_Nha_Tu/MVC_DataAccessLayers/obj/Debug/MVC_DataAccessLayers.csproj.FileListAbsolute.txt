@@ -1,0 +1,9 @@
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\bin\Debug\MVC_DataAccessLayers.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\bin\Debug\MVC_DataAccessLayers.pdb
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\bin\Debug\MVC_ValueObjects.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\bin\Debug\MVC_ValueObjects.pdb
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\obj\Debug\MVC_DataAccessLayers.csprojAssemblyReference.cache
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\obj\Debug\MVC_DataAccessLayers.csproj.CoreCompileInputs.cache
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\obj\Debug\MVC_DataAccessLayers.csproj.CopyComplete
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\obj\Debug\MVC_DataAccessLayers.dll
+F:\10 - DoAn\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\obj\Debug\MVC_DataAccessLayers.pdb
