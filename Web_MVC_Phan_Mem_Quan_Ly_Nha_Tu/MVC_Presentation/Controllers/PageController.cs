@@ -17,5 +17,9 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public ActionResult CapNhatTinhTrangSucKhoePhamNhan()
+        {
+            return View();
+        }
     }
 }
