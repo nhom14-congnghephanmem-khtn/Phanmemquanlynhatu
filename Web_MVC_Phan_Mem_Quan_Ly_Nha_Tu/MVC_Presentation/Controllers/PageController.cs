@@ -29,5 +29,9 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public ActionResult GoiYKhauPhanAn()
+        {
+            return View();
+        }
     }
 }
