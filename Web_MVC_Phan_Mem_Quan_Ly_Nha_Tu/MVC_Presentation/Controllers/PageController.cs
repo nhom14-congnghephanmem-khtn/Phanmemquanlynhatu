@@ -37,5 +37,9 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public ActionResult TinhTrangPhamNhan()
+        {
+            return View();
+        }
     }
 }
