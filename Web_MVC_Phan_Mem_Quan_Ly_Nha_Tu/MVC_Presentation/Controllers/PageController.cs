@@ -33,5 +33,9 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public ActionResult HoatDongCuaBoPhan()
+        {
+            return View();
+        }
     }
 }

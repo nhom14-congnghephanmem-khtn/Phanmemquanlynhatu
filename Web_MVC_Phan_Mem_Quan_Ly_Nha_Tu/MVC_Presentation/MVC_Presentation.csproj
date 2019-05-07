@@ -204,6 +204,7 @@
     <Content Include="Views\Page\DanhSachPhamNhan.cshtml" />
     <Content Include="Views\Page\DanhSachTuNhanDuocChamSocTrongNgay.cshtml" />
     <Content Include="Views\Page\GoiYKhauPhanAn.cshtml" />
+    <Content Include="Views\Page\HoatDongCuaBoPhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
