@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_ValueObjects.Nguoi_Dung_Objects
 @{
     Layout = null;
 }
@@ -54,30 +54,34 @@
                 <h4> Quản Lí Nhà Tù</h4>
                 <img src="~/Content/image/img-login.png" />
             </div>
-            <div class="col-md-6 login-right">
-                <h4>Đăng Nhập</h4>
+            @using (Html.BeginForm("DangNhap", "DangNhap", FormMethod.Post))
+            {
+                <div class="col-md-6 login-right">
+                    <h4>Đăng Nhập</h4>
 
-                <div class="login-form">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">User</span>
-                                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    <div class="login-form">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">User</span>
+                                    @Html.TextBoxFor(m => m.user_name, new { @type = "text", @class = "form-control", @placeholder = "Username"})
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">PassWord</span>
-                                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">PassWord</span>
+                                    @Html.TextBoxFor(m => m.password, new { @type = "text", @class = "form-control", @placeholder = "Username" })
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+                            </div>
+                        </form>
 
+                    </div>
                 </div>
-            </div>
+            }
+
         </div>
     </div>
     <footer>
