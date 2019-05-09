@@ -4,8 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+    <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -39,6 +38,21 @@
           <Parameter Name="ma_so" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SP_Nguoi_Dung_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Pham_Nhan_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma_so" Type="varchar" Mode="In" />
+          <Parameter Name="ho_ten" Type="nvarchar" Mode="In" />
+          <Parameter Name="ngay_sinh" Type="datetime" Mode="In" />
+          <Parameter Name="noi_sinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="pham_toi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt_nguoi_than" Type="varchar" Mode="In" />
+          <Parameter Name="tong_so_ngay_giam_giu" Type="numeric" Mode="In" />
+          <Parameter Name="muc_do_pham_toi" Type="numeric" Mode="In" />
+          <Parameter Name="ngay_tiep_nhan" Type="datetime" Mode="In" />
+          <Parameter Name="tinh_trang_tiep_nhan" Type="bit" Mode="In" />
+          <Parameter Name="ma_nguoi_than" Type="varchar" Mode="In" />
+          <Parameter Name="check" Type="bit" Mode="In" />
+        </Function>
         <Function Name="SP_Phong_Ban_GetElementByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ma_phong_ban" Type="varchar" Mode="In" />
         </Function>
@@ -50,8 +64,7 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DB_PrisonManagementModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_PrisonManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -86,11 +99,11 @@
             <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Nguoi_Dung_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByID_Result)">
-            <Parameter Name="ma_so" Mode="In" Type="String" />
+          <Parameter Name="ma_so" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Nguoi_Dung_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElements_Result)" />
           <FunctionImport Name="SP_Phong_Ban_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Phong_Ban_GetElementByID_Result)">
-            <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
+          <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Phong_Ban_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Phong_Ban_GetElements_Result)" />
           <FunctionImport Name="sp_renamediagram">
@@ -99,6 +112,21 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SP_Pham_Nhan_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Pham_Nhan_GetElements_Result)" />
+          <FunctionImport Name="SP_Pham_Nhan_InsertOrUpdate">
+            <Parameter Name="ma_so" Mode="In" Type="String" />
+            <Parameter Name="ho_ten" Mode="In" Type="String" />
+            <Parameter Name="ngay_sinh" Mode="In" Type="DateTime" />
+            <Parameter Name="noi_sinh" Mode="In" Type="String" />
+            <Parameter Name="pham_toi" Mode="In" Type="String" />
+            <Parameter Name="sdt_nguoi_than" Mode="In" Type="String" />
+            <Parameter Name="tong_so_ngay_giam_giu" Mode="In" Type="Decimal" />
+            <Parameter Name="muc_do_pham_toi" Mode="In" Type="Decimal" />
+            <Parameter Name="ngay_tiep_nhan" Mode="In" Type="DateTime" />
+            <Parameter Name="tinh_trang_tiep_nhan" Mode="In" Type="Boolean" />
+            <Parameter Name="ma_nguoi_than" Mode="In" Type="String" />
+            <Parameter Name="check" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -140,6 +168,19 @@
         <ComplexType Name="SP_Phong_Ban_GetElements_Result">
           <Property Type="String" Name="ma_phong_ban" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="ten_phong_ban" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SP_Pham_Nhan_GetElements_Result">
+          <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="ho_ten" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ngay_sinh" Nullable="true" Precision="23" />
+          <Property Type="String" Name="noi_sinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pham_toi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sdt_nguoi_than" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="tong_so_ngay_giam_giu" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="muc_do_pham_toi" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="ngay_tiep_nhan" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="tinh_trang_tiep_nhan" Nullable="true" />
+          <Property Type="String" Name="ma_nguoi_than" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -221,6 +262,24 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_PrisonManagementModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_PrisonManagementModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="SP_Pham_Nhan_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Pham_Nhan_GetElements">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Pham_Nhan_GetElements_Result">
+                <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+                <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+                <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+                <ScalarProperty Name="noi_sinh" ColumnName="noi_sinh" />
+                <ScalarProperty Name="pham_toi" ColumnName="pham_toi" />
+                <ScalarProperty Name="sdt_nguoi_than" ColumnName="sdt_nguoi_than" />
+                <ScalarProperty Name="tong_so_ngay_giam_giu" ColumnName="tong_so_ngay_giam_giu" />
+                <ScalarProperty Name="muc_do_pham_toi" ColumnName="muc_do_pham_toi" />
+                <ScalarProperty Name="ngay_tiep_nhan" ColumnName="ngay_tiep_nhan" />
+                <ScalarProperty Name="tinh_trang_tiep_nhan" ColumnName="tinh_trang_tiep_nhan" />
+                <ScalarProperty Name="ma_nguoi_than" ColumnName="ma_nguoi_than" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Pham_Nhan_InsertOrUpdate" FunctionName="DB_PrisonManagementModel.Store.SP_Pham_Nhan_InsertOrUpdate" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC_BusinessLogicLayers.BLL;
+using MVC_ValueObjects;
 
 namespace MVC_Presentation.Controllers
 {
     public class PageController : Controller
     {
         // GET: Page
+        [HttpGet]
         public ActionResult ThemPhamNhan()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ThemPhamNhan(Pham_Nhan_Objects obj)
+        {
+            if(ModelState.IsValid)
+            {
+                new Pham_Nhan_BLL().Insert(obj);
+                return RedirectToAction("ThemPhamNhan");
+            }
             return View();
         }
         public ActionResult TinhTrangCaiTao()

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BLL\BaseBLL.cs" />
     <Compile Include="BLL\Nguoi_Dung_BLL.cs" />
+    <Compile Include="BLL\Pham_Nhan_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

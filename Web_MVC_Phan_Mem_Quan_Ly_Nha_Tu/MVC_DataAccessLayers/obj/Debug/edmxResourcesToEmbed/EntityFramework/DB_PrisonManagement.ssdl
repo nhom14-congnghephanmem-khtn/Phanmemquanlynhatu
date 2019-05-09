@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -34,6 +33,21 @@
     <Parameter Name="ma_so" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SP_Nguoi_Dung_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Pham_Nhan_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_so" Type="varchar" Mode="In" />
+    <Parameter Name="ho_ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngay_sinh" Type="datetime" Mode="In" />
+    <Parameter Name="noi_sinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="pham_toi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt_nguoi_than" Type="varchar" Mode="In" />
+    <Parameter Name="tong_so_ngay_giam_giu" Type="numeric" Mode="In" />
+    <Parameter Name="muc_do_pham_toi" Type="numeric" Mode="In" />
+    <Parameter Name="ngay_tiep_nhan" Type="datetime" Mode="In" />
+    <Parameter Name="tinh_trang_tiep_nhan" Type="bit" Mode="In" />
+    <Parameter Name="ma_nguoi_than" Type="varchar" Mode="In" />
+    <Parameter Name="check" Type="bit" Mode="In" />
+  </Function>
   <Function Name="SP_Phong_Ban_GetElementByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma_phong_ban" Type="varchar" Mode="In" />
   </Function>

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Nguoi_Dung_Objects.cs" />
+    <Compile Include="Pham_Nhan_Objects.cs" />
     <Compile Include="Phong_Ban_Objects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
