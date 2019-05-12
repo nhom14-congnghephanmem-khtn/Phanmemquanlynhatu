@@ -46,6 +46,8 @@
     <Compile Include="Pham_Nhan_Objects.cs" />
     <Compile Include="Phong_Ban_Objects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tinh_Trang_Pham_Nhan_Objects.cs" />
+    <Compile Include="Tinh_Trang_Thong_Tin_Pham_Nhan_Objects.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

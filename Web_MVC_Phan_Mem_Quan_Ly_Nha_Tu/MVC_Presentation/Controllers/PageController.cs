@@ -17,11 +17,11 @@ namespace MVC_Presentation.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ThemPhamNhan(Pham_Nhan_Objects obj)
+        public ActionResult ThemPhamNhan(Tinh_Trang_Thong_Tin_Pham_Nhan_Objects obj)
         {
             if(ModelState.IsValid)
             {
-                new Pham_Nhan_BLL().Insert(obj);
+                new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().Insert(obj);
                 return RedirectToAction("ThemPhamNhan");
             }
             return View();
