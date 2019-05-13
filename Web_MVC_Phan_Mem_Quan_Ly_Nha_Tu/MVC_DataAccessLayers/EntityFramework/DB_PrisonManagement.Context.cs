@@ -175,5 +175,146 @@ namespace MVC_DataAccessLayers.EntityFramework
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<SP_Pham_Nhan_GetElements_Result> SP_Pham_Nhan_GetElements()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_GetElements_Result>("SP_Pham_Nhan_GetElements");
+        }
+    
+        public virtual int SP_Pham_Nhan_InsertOrUpdate(string ma_so, string ho_ten, Nullable<System.DateTime> ngay_sinh, string noi_sinh, string pham_toi, string sdt_nguoi_than, Nullable<decimal> tong_so_ngay_giam_giu, Nullable<decimal> muc_do_pham_toi, Nullable<System.DateTime> ngay_tiep_nhan, Nullable<bool> tinh_trang_tiep_nhan, string ma_nguoi_than, Nullable<bool> check)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            var ho_tenParameter = ho_ten != null ?
+                new ObjectParameter("ho_ten", ho_ten) :
+                new ObjectParameter("ho_ten", typeof(string));
+    
+            var ngay_sinhParameter = ngay_sinh.HasValue ?
+                new ObjectParameter("ngay_sinh", ngay_sinh) :
+                new ObjectParameter("ngay_sinh", typeof(System.DateTime));
+    
+            var noi_sinhParameter = noi_sinh != null ?
+                new ObjectParameter("noi_sinh", noi_sinh) :
+                new ObjectParameter("noi_sinh", typeof(string));
+    
+            var pham_toiParameter = pham_toi != null ?
+                new ObjectParameter("pham_toi", pham_toi) :
+                new ObjectParameter("pham_toi", typeof(string));
+    
+            var sdt_nguoi_thanParameter = sdt_nguoi_than != null ?
+                new ObjectParameter("sdt_nguoi_than", sdt_nguoi_than) :
+                new ObjectParameter("sdt_nguoi_than", typeof(string));
+    
+            var tong_so_ngay_giam_giuParameter = tong_so_ngay_giam_giu.HasValue ?
+                new ObjectParameter("tong_so_ngay_giam_giu", tong_so_ngay_giam_giu) :
+                new ObjectParameter("tong_so_ngay_giam_giu", typeof(decimal));
+    
+            var muc_do_pham_toiParameter = muc_do_pham_toi.HasValue ?
+                new ObjectParameter("muc_do_pham_toi", muc_do_pham_toi) :
+                new ObjectParameter("muc_do_pham_toi", typeof(decimal));
+    
+            var ngay_tiep_nhanParameter = ngay_tiep_nhan.HasValue ?
+                new ObjectParameter("ngay_tiep_nhan", ngay_tiep_nhan) :
+                new ObjectParameter("ngay_tiep_nhan", typeof(System.DateTime));
+    
+            var tinh_trang_tiep_nhanParameter = tinh_trang_tiep_nhan.HasValue ?
+                new ObjectParameter("tinh_trang_tiep_nhan", tinh_trang_tiep_nhan) :
+                new ObjectParameter("tinh_trang_tiep_nhan", typeof(bool));
+    
+            var ma_nguoi_thanParameter = ma_nguoi_than != null ?
+                new ObjectParameter("ma_nguoi_than", ma_nguoi_than) :
+                new ObjectParameter("ma_nguoi_than", typeof(string));
+    
+            var checkParameter = check.HasValue ?
+                new ObjectParameter("check", check) :
+                new ObjectParameter("check", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Pham_Nhan_InsertOrUpdate", ma_soParameter, ho_tenParameter, ngay_sinhParameter, noi_sinhParameter, pham_toiParameter, sdt_nguoi_thanParameter, tong_so_ngay_giam_giuParameter, muc_do_pham_toiParameter, ngay_tiep_nhanParameter, tinh_trang_tiep_nhanParameter, ma_nguoi_thanParameter, checkParameter);
+        }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Pham_Nhan_GetElements_Result> SP_Tinh_Trang_Pham_Nhan_GetElements()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Pham_Nhan_GetElements_Result>("SP_Tinh_Trang_Pham_Nhan_GetElements");
+        }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements_Result> SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements_Result>("SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements");
+        }
+    
+        public virtual int SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate(string ma_so, string ho_ten, Nullable<System.DateTime> ngay_sinh, string noi_sinh, string pham_toi, string sdt_nguoi_than, Nullable<decimal> tong_so_ngay_giam_giu, Nullable<decimal> muc_do_pham_toi, Nullable<System.DateTime> ngay_tiep_nhan, Nullable<bool> tinh_trang_tiep_nhan, string ma_nguoi_than, Nullable<int> loai_suc_khoe, Nullable<decimal> so_ngay_da_giam_giu, Nullable<System.DateTime> ngay_phong_thích, Nullable<int> khau_phan_an, string chi_tiet_khau_phan, Nullable<bool> check)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            var ho_tenParameter = ho_ten != null ?
+                new ObjectParameter("ho_ten", ho_ten) :
+                new ObjectParameter("ho_ten", typeof(string));
+    
+            var ngay_sinhParameter = ngay_sinh.HasValue ?
+                new ObjectParameter("ngay_sinh", ngay_sinh) :
+                new ObjectParameter("ngay_sinh", typeof(System.DateTime));
+    
+            var noi_sinhParameter = noi_sinh != null ?
+                new ObjectParameter("noi_sinh", noi_sinh) :
+                new ObjectParameter("noi_sinh", typeof(string));
+    
+            var pham_toiParameter = pham_toi != null ?
+                new ObjectParameter("pham_toi", pham_toi) :
+                new ObjectParameter("pham_toi", typeof(string));
+    
+            var sdt_nguoi_thanParameter = sdt_nguoi_than != null ?
+                new ObjectParameter("sdt_nguoi_than", sdt_nguoi_than) :
+                new ObjectParameter("sdt_nguoi_than", typeof(string));
+    
+            var tong_so_ngay_giam_giuParameter = tong_so_ngay_giam_giu.HasValue ?
+                new ObjectParameter("tong_so_ngay_giam_giu", tong_so_ngay_giam_giu) :
+                new ObjectParameter("tong_so_ngay_giam_giu", typeof(decimal));
+    
+            var muc_do_pham_toiParameter = muc_do_pham_toi.HasValue ?
+                new ObjectParameter("muc_do_pham_toi", muc_do_pham_toi) :
+                new ObjectParameter("muc_do_pham_toi", typeof(decimal));
+    
+            var ngay_tiep_nhanParameter = ngay_tiep_nhan.HasValue ?
+                new ObjectParameter("ngay_tiep_nhan", ngay_tiep_nhan) :
+                new ObjectParameter("ngay_tiep_nhan", typeof(System.DateTime));
+    
+            var tinh_trang_tiep_nhanParameter = tinh_trang_tiep_nhan.HasValue ?
+                new ObjectParameter("tinh_trang_tiep_nhan", tinh_trang_tiep_nhan) :
+                new ObjectParameter("tinh_trang_tiep_nhan", typeof(bool));
+    
+            var ma_nguoi_thanParameter = ma_nguoi_than != null ?
+                new ObjectParameter("ma_nguoi_than", ma_nguoi_than) :
+                new ObjectParameter("ma_nguoi_than", typeof(string));
+    
+            var loai_suc_khoeParameter = loai_suc_khoe.HasValue ?
+                new ObjectParameter("loai_suc_khoe", loai_suc_khoe) :
+                new ObjectParameter("loai_suc_khoe", typeof(int));
+    
+            var so_ngay_da_giam_giuParameter = so_ngay_da_giam_giu.HasValue ?
+                new ObjectParameter("so_ngay_da_giam_giu", so_ngay_da_giam_giu) :
+                new ObjectParameter("so_ngay_da_giam_giu", typeof(decimal));
+    
+            var ngay_phong_thíchParameter = ngay_phong_thích.HasValue ?
+                new ObjectParameter("ngay_phong_thích", ngay_phong_thích) :
+                new ObjectParameter("ngay_phong_thích", typeof(System.DateTime));
+    
+            var khau_phan_anParameter = khau_phan_an.HasValue ?
+                new ObjectParameter("khau_phan_an", khau_phan_an) :
+                new ObjectParameter("khau_phan_an", typeof(int));
+    
+            var chi_tiet_khau_phanParameter = chi_tiet_khau_phan != null ?
+                new ObjectParameter("chi_tiet_khau_phan", chi_tiet_khau_phan) :
+                new ObjectParameter("chi_tiet_khau_phan", typeof(string));
+    
+            var checkParameter = check.HasValue ?
+                new ObjectParameter("check", check) :
+                new ObjectParameter("check", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate", ma_soParameter, ho_tenParameter, ngay_sinhParameter, noi_sinhParameter, pham_toiParameter, sdt_nguoi_thanParameter, tong_so_ngay_giam_giuParameter, muc_do_pham_toiParameter, ngay_tiep_nhanParameter, tinh_trang_tiep_nhanParameter, ma_nguoi_thanParameter, loai_suc_khoeParameter, so_ngay_da_giam_giuParameter, ngay_phong_thíchParameter, khau_phan_anParameter, chi_tiet_khau_phanParameter, checkParameter);
+        }
     }
 }

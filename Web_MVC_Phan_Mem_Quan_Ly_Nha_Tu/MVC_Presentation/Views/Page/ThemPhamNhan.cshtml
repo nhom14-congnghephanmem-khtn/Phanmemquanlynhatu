@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_ValueObjects.Tinh_Trang_Thong_Tin_Pham_Nhan_Objects
 @{
     Layout = null;
 }
@@ -64,25 +64,31 @@
             </div>
             <div class="col-md-8 sidebar-right-cai-tao">
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> THÊM PHẠM NHÂN</h3>
-
-                <form action="" method="" class="form-tt">
+                @using (Html.BeginForm("ThemPhamNhan", "Page", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Mã Phạm Nhân: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="staticEmail" placeholder="A001">
+                            @Html.EditorFor(m => m.ma_so, new { htmlAttributes = new { @class = "form-control", id = "masophamnhan", placeholder = "A001" } })
+                            @Html.ValidationMessageFor(m => m.ma_so, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Họ Tên: </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword" placeholder="Họ Tên">
+                        <div class="col-sm-9">           
+                            @Html.EditorFor(m => m.ho_ten, new { htmlAttributes = new { @class = "form-control", @id = "hotenphamnhan", @placeholder = "Họ Tên" } })
+                            @Html.ValidationMessageFor(m => m.ho_ten, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh: </label>
                         <div class="col-sm-9">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                @Html.EditorFor(m => m.ngay_sinh, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.ngay_sinh, "", new { @class = "text-danger" })
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -92,46 +98,50 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Quê Quán: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword" placeholder="Hồ Chí Minh">
+                            @Html.EditorFor(m => m.noi_sinh, new { htmlAttributes = new { @class = "form-control", @id = "noisinh", @placeholder = "Hồ Chí Minh" } })
+                            @Html.ValidationMessageFor(m => m.noi_sinh, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Phạm Tội: </label>
                         <div class="col-sm-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Trộm Cắp"></textarea>
+                            @Html.TextAreaFor(m => m.pham_toi, new { @class = "form-control rounded-0", @id = "txtphamtoi", @rows = "3", @placeholder = "Trộm Cắp" })
+                            @Html.ValidationMessageFor(m => m.pham_toi, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">SDT Người Thân: </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputPassword" placeholder="0123456789">
+                            @Html.EditorFor(m => m.sdt_nguoi_than, new { htmlAttributes = new { @class = "form-control", @id = "txtsdtnguoithan", @placeholder = "SĐT Người Thân" } })
+                            @Html.ValidationMessageFor(m => m.sdt_nguoi_than, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Loại Sức Khoẻ: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Loại 1</option>
-                                <option value="1">Loại 2</option>
-                                <option value="2">Loại 3</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.loai_suc_khoe, new List<SelectListItem> {
+                            new SelectListItem { Text = "Loại 1", Value = "1"},
+                            new SelectListItem { Text = "Loại 2", Value = "2"},
+                            new SelectListItem { Text = "Loại 3", Value = "3"}
+                            }, new { @class = "custom-select form-control" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Mức Độ Phạm Tội: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Mức 1</option>
-                                <option value="1">Mức 2</option>
-                                <option value="2">Mức 3</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.muc_do_pham_toi, new List<SelectListItem> {
+                            new SelectListItem { Text = "Mức 1", Value = "1"},
+                            new SelectListItem { Text = "Mức 2", Value = "2"},
+                            new SelectListItem { Text = "Mức 3", Value = "3"}
+                            }, new { @class = "custom-select form-control" })
+                            @Html.ValidationMessageFor(m => m.muc_do_pham_toi, "", new { @class = "text-danger"})
                         </div>
                     </div>
-                </form>
-                <div class="tt-huy-capnhat">
-                    <button type="button" class="btn btn-primary">Huỷ</button>
-                    <button type="button" class="btn btn-success">Thêm</button>
-                </div>
+                    <div class="tt-huy-capnhat">
+                        <button type="reset" class="btn btn-primary">Huỷ</button>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -206,7 +216,7 @@
         	}, 800);
         	return false;
         });
-    });
+        });
     </script>
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
