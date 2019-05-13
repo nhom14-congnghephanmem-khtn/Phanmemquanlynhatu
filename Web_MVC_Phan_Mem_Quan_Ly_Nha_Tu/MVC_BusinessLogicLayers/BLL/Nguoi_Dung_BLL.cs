@@ -14,5 +14,10 @@ namespace MVC_BusinessLogicLayers.BLL
         {
             return new Nguoi_Dung_DAL().CheckLogin(username, password);
         }
+
+        public override List<Nguoi_Dung_Objects> GetElements()
+        {
+            return new Nguoi_Dung_DAL().GetElements();
+        }
     }
 }

@@ -57,6 +57,18 @@
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_so" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_so" Type="varchar" Mode="In" />
+    <Parameter Name="loai_suc_khoe" Type="int" Mode="In" />
+    <Parameter Name="khau_phan_an" Type="int" Mode="In" />
+    <Parameter Name="ngay_gio" Type="datetime" Mode="In" />
+    <Parameter Name="tinh_trang" Type="bit" Mode="In" />
+    <Parameter Name="ghi_chu" Type="ntext" Mode="In" />
+  </Function>
   <Function Name="SP_Tinh_Trang_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

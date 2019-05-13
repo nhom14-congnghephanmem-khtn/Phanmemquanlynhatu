@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_ValueObjects.Tinh_Trang_Cham_Soc_Pham_Nhan_Objects
 @{
     Layout = null;
 }
@@ -66,38 +66,47 @@
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> CẬP NHẬT TÌNH TRẠNG SỨC KHOẺ PHẠM NHÂN</h3>
 
                 <!-- <div class="tt-timkiem-xoa">
-                    <button type="button" class="btn btn-primary">Xoá</button>
-                    <button type="button" class="btn btn-success">Tìm Kiếm</button>
-                </div> -->
-                <div for="inputPassword" class="col-sm-3 lable-mucdo">Tìm Kiếm </div>
-                <form action="" method="" class="form-tt">
+        <button type="button" class="btn btn-primary">Xoá</button>
+        <button type="button" class="btn btn-success">Tìm Kiếm</button>
+    </div> -->
+                @using (Html.BeginForm("CapNhatTinhTrangSucKhoePhamNhan", "Page", FormMethod.Get, new { @class = "form-tt" }))
+                {
+                    <div for="inputPassword" class="col-sm-10 lable-mucdo">Tìm Kiếm </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Mã Phạm Nhân: </label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="staticEmail" placeholder="A001">
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="staticEmail" value="@ViewBag.ma_so" placeholder="A001">
                         </div>
                         <div class="col-md-3">
-                            <button type="button" class="btn btn-primary">Xoá</button>
-                            <button type="button" class="btn btn-success pull-right">Tìm Kiếm</button>
+                            <button type="reset" class="btn btn-primary">Xoá</button>
+                            <button type="submit" class="btn btn-success pull-right">Tìm Kiếm</button>
                         </div>
                     </div>
-                </form>
-                <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
+                }
+                @{
+                    if (Model != null)
+                    {
+                        <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
+                            <label class="col-sm-9">@Html.Raw(Model.ho_ten)</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
+                            <label class="col-sm-9">@Html.Raw(Model.ngay_sinh)</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
+                            <label class="col-sm-9">@Html.Raw(Model.noi_sinh)</label>
+                        </div>
+                    }
+                    else
+                    {
+                        <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
+                    }
+                }
 
-                <form action="" method="" class="form-tt">
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
-                        <label class="col-sm-9">Nguyễn Văn A</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
-                        <label class="col-sm-9">25/01/1993</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
-                        <label class="col-sm-9">Hồ Chí Minh</label>
-                    </div>
-                </form>
+                <form action="" method="" class="form-tt"></form>
                 <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Sức Khoẻ </div>
 
                 <form action="" method="" class="form-tt">
@@ -223,7 +232,7 @@
     <script type="text/javascript">
 	$(function () {
 		$('#datetimepicker1').datetimepicker();
-	});
+        });
     </script>
 </body>
 </html>

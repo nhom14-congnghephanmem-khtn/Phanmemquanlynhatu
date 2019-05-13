@@ -53,6 +53,7 @@
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\Nguoi_Dung_DAL.cs" />
     <Compile Include="DAL\Pham_Nhan_DAL.cs" />
+    <Compile Include="DAL\Tinh_Trang_Cham_Soc_Pham_Nhan_DAL.cs" />
     <Compile Include="DAL\Tinh_Trang_Thong_Tin_Pham_Nhan_DAL.cs" />
     <Compile Include="EntityFramework\DB_PrisonManagement.Context.cs">
       <AutoGen>True</AutoGen>
@@ -91,6 +92,15 @@
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Phong_Ban_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElmentByID_InsertOrUpdate_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Tinh_Trang_Pham_Nhan_GetElements_Result.cs">

@@ -30,9 +30,12 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
-        public ActionResult CapNhatTinhTrangSucKhoePhamNhan()
+
+        public ActionResult CapNhatTinhTrangSucKhoePhamNhan(string ma_so)
         {
-            return View();
+            ViewBag.ma_so = ma_so;
+            var obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
+            return View(obj);
         }
         public ActionResult DanhSachPhamNhan()
         {

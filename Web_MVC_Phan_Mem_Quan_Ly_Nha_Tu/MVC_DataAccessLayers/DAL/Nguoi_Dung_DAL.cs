@@ -21,5 +21,28 @@ namespace MVC_DataAccessLayers.DAL
             }
             return null;
         }
+
+        public override List<Nguoi_Dung_Objects> GetElements()
+        {
+            var data = _dbContext.SP_Nguoi_Dung_GetElements();
+            if (data == null)
+            {
+                return null;
+            }
+            List<Nguoi_Dung_Objects> UserList = new List<Nguoi_Dung_Objects>();
+            foreach (var item in data)
+            {
+                Nguoi_Dung_Objects user = new Nguoi_Dung_Objects();
+                user.ma_so = item.ma_so;
+                user.hoten = item.hoten;
+                user.user_name = item.user_name;
+                user.password = item.password;
+                user.ma_phong_ban = item.ma_phong_ban;
+                user.khau_phan_an = item.khau_phan_an;
+                user.chi_tiet_khau_phan_an = item.chi_tiet_khau_phan_an;
+                UserList.Add(user);
+            }
+            return UserList;
+        }
     }
 }

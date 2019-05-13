@@ -316,5 +316,48 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate", ma_soParameter, ho_tenParameter, ngay_sinhParameter, noi_sinhParameter, pham_toiParameter, sdt_nguoi_thanParameter, tong_so_ngay_giam_giuParameter, muc_do_pham_toiParameter, ngay_tiep_nhanParameter, tinh_trang_tiep_nhanParameter, ma_nguoi_thanParameter, loai_suc_khoeParameter, so_ngay_da_giam_giuParameter, ngay_phong_thíchParameter, khau_phan_anParameter, chi_tiet_khau_phanParameter, checkParameter);
         }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result> SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result>("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements");
+        }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result> SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID(string ma_so)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result>("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID", ma_soParameter);
+        }
+    
+        public virtual int SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate(string ma_so, Nullable<int> loai_suc_khoe, Nullable<int> khau_phan_an, Nullable<System.DateTime> ngay_gio, Nullable<bool> tinh_trang, string ghi_chu)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            var loai_suc_khoeParameter = loai_suc_khoe.HasValue ?
+                new ObjectParameter("loai_suc_khoe", loai_suc_khoe) :
+                new ObjectParameter("loai_suc_khoe", typeof(int));
+    
+            var khau_phan_anParameter = khau_phan_an.HasValue ?
+                new ObjectParameter("khau_phan_an", khau_phan_an) :
+                new ObjectParameter("khau_phan_an", typeof(int));
+    
+            var ngay_gioParameter = ngay_gio.HasValue ?
+                new ObjectParameter("ngay_gio", ngay_gio) :
+                new ObjectParameter("ngay_gio", typeof(System.DateTime));
+    
+            var tinh_trangParameter = tinh_trang.HasValue ?
+                new ObjectParameter("tinh_trang", tinh_trang) :
+                new ObjectParameter("tinh_trang", typeof(bool));
+    
+            var ghi_chuParameter = ghi_chu != null ?
+                new ObjectParameter("ghi_chu", ghi_chu) :
+                new ObjectParameter("ghi_chu", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate", ma_soParameter, loai_suc_khoeParameter, khau_phan_anParameter, ngay_gioParameter, tinh_trangParameter, ghi_chuParameter);
+        }
     }
 }
