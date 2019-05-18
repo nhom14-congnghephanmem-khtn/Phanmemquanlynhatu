@@ -31,10 +31,16 @@ namespace MVC_Presentation.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult CapNhatTinhTrangSucKhoePhamNhan(string ma_so)
         {
-            ViewBag.ma_so = ma_so;
-            var obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
+            ma_so = Request["txtSearch_Text"];
+            Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
+            if (obj == null)
+            {
+                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID("PC100");
+                ModelState.AddModelError("Search", "Không tìm thấy");
+            }
             return View(obj);
         }
         public ActionResult DanhSachPhamNhan()

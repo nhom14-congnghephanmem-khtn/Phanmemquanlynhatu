@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC_ValueObjects
 {
@@ -10,6 +11,8 @@ namespace MVC_ValueObjects
     {
         public string ma_so { get; set; }
         public string ho_ten { get; set; }
+        [Editable(false)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> ngay_sinh { get; set; }
         public string noi_sinh { get; set; }
         public string pham_toi { get; set; }
