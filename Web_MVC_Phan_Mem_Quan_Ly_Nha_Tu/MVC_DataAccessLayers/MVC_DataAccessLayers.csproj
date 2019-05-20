@@ -76,6 +76,12 @@
     <Compile Include="EntityFramework\sp_helpdiagrams_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLogin1_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLogin_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
@@ -83,6 +89,9 @@
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Pham_Nhan_GetElements_Result.cs">

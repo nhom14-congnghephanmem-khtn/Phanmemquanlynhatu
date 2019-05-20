@@ -25,11 +25,6 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="SP_Nguoi_Dung_CheckLogin" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_CheckLogin_Result)">
-      <Parameter Name="user_name" Mode="In" Type="String" />
-      <Parameter Name="password" Mode="In" Type="String" />
-      <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="SP_Nguoi_Dung_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByID_Result)">
       <Parameter Name="ma_so" Mode="In" Type="String" />
     </FunctionImport>
@@ -91,6 +86,14 @@
       <Parameter Name="ngay_gio" Mode="In" Type="DateTime" />
       <Parameter Name="tinh_trang" Mode="In" Type="Boolean" />
       <Parameter Name="ghi_chu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Nguoi_Dung_GetUserByMa_Phong_Ban" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -219,5 +222,22 @@
     <Property Type="String" Name="ngay_sinh" Nullable="true" MaxLength="4000" />
     <Property Type="String" Name="noi_sinh" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="ho_ten" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result">
+    <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="hoten" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ma_phong_ban" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="khau_phan_an" Nullable="true" />
+    <Property Type="String" Name="chi_tiet_khau_phan_an" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="SP_Nguoi_Dung_CheckLogin1_Result">
+    <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
+    <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

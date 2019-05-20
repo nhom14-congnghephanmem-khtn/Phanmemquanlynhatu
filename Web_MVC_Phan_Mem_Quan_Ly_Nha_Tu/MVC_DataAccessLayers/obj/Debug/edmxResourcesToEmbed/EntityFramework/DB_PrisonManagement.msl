@@ -23,14 +23,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_CheckLogin" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_CheckLogin">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_CheckLogin_Result">
-          <ScalarProperty Name="user_name" ColumnName="user_name" />
-          <ScalarProperty Name="password" ColumnName="password" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetElementByID" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetElementByID">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByID_Result">
@@ -171,5 +163,26 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate" FunctionName="DB_PrisonManagementModel.Store.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetUserByMa_Phong_Ban" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetUserByMa_Phong_Ban">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result">
+          <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+          <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+          <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_CheckLoginByMaPhongBan" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_CheckLoginByMaPhongBan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

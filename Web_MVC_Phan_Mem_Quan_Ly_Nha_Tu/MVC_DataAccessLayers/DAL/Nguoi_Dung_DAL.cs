@@ -10,14 +10,27 @@ namespace MVC_DataAccessLayers.DAL
 {
     public class Nguoi_Dung_DAL : BaseDAL<Nguoi_Dung_Objects>
     {
-        public Nguoi_Dung_Objects CheckLogin(string username, string password)
+        public Nguoi_Dung_Objects CheckLogin(string username, string password, string roleID)
         {
-            foreach (var item in _dbContext.SP_Nguoi_Dung_CheckLogin(username,password,"1"))
+            var data = _dbContext.SP_Nguoi_Dung_CheckLoginByMaPhongBan(username, password, roleID);
+            foreach (var item in data)
             {
                 Nguoi_Dung_Objects Ouser = new Nguoi_Dung_Objects();
                 Ouser.user_name = item.user_name;
                 Ouser.password = item.password;
                 return Ouser;
+            }
+            return null;
+        }
+
+        public Nguoi_Dung_Objects GetUserByMaPhongBan(string username)
+        {
+            var data = _dbContext.SP_Nguoi_Dung_GetUserByMa_Phong_Ban(username);
+            foreach (var item in data)
+            {
+                Nguoi_Dung_Objects ouser = new Nguoi_Dung_Objects();
+                ouser.ma_phong_ban = item.ma_phong_ban;
+                return ouser;
             }
             return null;
         }

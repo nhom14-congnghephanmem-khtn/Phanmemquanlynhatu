@@ -109,23 +109,6 @@ namespace MVC_DataAccessLayers.EntityFramework
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<SP_Nguoi_Dung_CheckLogin_Result> SP_Nguoi_Dung_CheckLogin(string user_name, string password, string ma_phong_ban)
-        {
-            var user_nameParameter = user_name != null ?
-                new ObjectParameter("user_name", user_name) :
-                new ObjectParameter("user_name", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("password", password) :
-                new ObjectParameter("password", typeof(string));
-    
-            var ma_phong_banParameter = ma_phong_ban != null ?
-                new ObjectParameter("ma_phong_ban", ma_phong_ban) :
-                new ObjectParameter("ma_phong_ban", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_CheckLogin_Result>("SP_Nguoi_Dung_CheckLogin", user_nameParameter, passwordParameter, ma_phong_banParameter);
-        }
-    
         public virtual ObjectResult<SP_Nguoi_Dung_GetElementByID_Result> SP_Nguoi_Dung_GetElementByID(string ma_so)
         {
             var ma_soParameter = ma_so != null ?
@@ -358,6 +341,32 @@ namespace MVC_DataAccessLayers.EntityFramework
                 new ObjectParameter("ghi_chu", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate", ma_soParameter, loai_suc_khoeParameter, khau_phan_anParameter, ngay_gioParameter, tinh_trangParameter, ghi_chuParameter);
+        }
+    
+        public virtual ObjectResult<SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result> SP_Nguoi_Dung_GetUserByMa_Phong_Ban(string username)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result>("SP_Nguoi_Dung_GetUserByMa_Phong_Ban", usernameParameter);
+        }
+    
+        public virtual ObjectResult<SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result> SP_Nguoi_Dung_CheckLoginByMaPhongBan(string username, string password, string ma_phong_ban)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var ma_phong_banParameter = ma_phong_ban != null ?
+                new ObjectParameter("ma_phong_ban", ma_phong_ban) :
+                new ObjectParameter("ma_phong_ban", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result>("SP_Nguoi_Dung_CheckLoginByMaPhongBan", usernameParameter, passwordParameter, ma_phong_banParameter);
         }
     }
 }

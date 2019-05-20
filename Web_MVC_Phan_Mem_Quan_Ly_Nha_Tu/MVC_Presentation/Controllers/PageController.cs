@@ -45,6 +45,7 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult DanhSachPhamNhan()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             return View();
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
@@ -63,8 +64,64 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        private static long Fix(double Number)
+        {
+            if (Number >= 0)
+            {
+                return (long)Math.Floor(Number);
+            }
+            return (long)Math.Ceiling(Number);
+        }
         public ActionResult DanhSachPhamNhanTiepNhanPhongThich()
         {
+            DateTime d1 = DateTime.ParseExact("01/01/2014", "dd/MM/yyyy", null);
+            DateTime d2 = DateTime.ParseExact("06/05/2016", "dd/MM/yyyy", null);
+            int year = d2.Year - d1.Year;
+            int month = (d2.Month - d1.Month);
+            int day = d2.Day - d1.Day;
+            if (year == 0)
+            {
+                ViewBag.date = month + " tháng " + day + " ngày";
+            }
+            else
+            {
+                if (month == 0)
+                {
+                    ViewBag.date = year + " năm " + day + " ngày";
+                }
+                else
+                {
+                    if (day == 0)
+                    {
+                        ViewBag.date = year + " năm " + month + " tháng";
+                    }
+                    else
+                    {
+                        if (year == 0 && month == 0)
+                        {
+                            ViewBag.date = day + " ngày";
+                        }
+                        else
+                        {
+                            if (year == 0 && day == 0)
+                            {
+                                ViewBag.date = month + " tháng";
+                            }
+                            else
+                            {
+                                if (month == 0 && day == 0)
+                                {
+                                    ViewBag.date = year + " năm";
+                                }
+                                else
+                                {
+                                    ViewBag.date = year + " năm " + month + " tháng " + day + " ngày";
+                                }
+                            }
+                        }
+                    }
+                }  
+            }
             return View();
         }
     }
