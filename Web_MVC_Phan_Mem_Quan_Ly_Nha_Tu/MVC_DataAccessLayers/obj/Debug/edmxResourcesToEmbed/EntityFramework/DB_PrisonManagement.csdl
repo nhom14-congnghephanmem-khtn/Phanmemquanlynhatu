@@ -95,6 +95,11 @@
       <Parameter Name="password" Mode="In" Type="String" />
       <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang" ReturnType="Collection(DB_PrisonManagementModel.SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang_Result)">
+      <Parameter Name="tinh_trang_tiep_nhan" Mode="In" Type="Boolean" />
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -239,5 +244,25 @@
   <ComplexType Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
     <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang_Result">
+    <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ho_ten" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ngay_sinh" Nullable="true" Precision="23" />
+    <Property Type="String" Name="noi_sinh" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="pham_toi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sdt_nguoi_than" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="tong_so_ngay_giam_giu" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="muc_do_pham_toi" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="ngay_tiep_nhan" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="tinh_trang_tiep_nhan" Nullable="true" />
+    <Property Type="String" Name="ma_nguoi_than" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="loai_suc_khoe" Nullable="true" />
+    <Property Type="Decimal" Name="so_ngay_da_giam_giu" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="ngay_phong_thich" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="khau_phan_an" Nullable="true" />
+    <Property Type="String" Name="chi_tiet_khau_phan_an" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ma_so_pham_nhan" Nullable="true" MaxLength="20" />
   </ComplexType>
 </Schema>

@@ -368,5 +368,22 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result>("SP_Nguoi_Dung_CheckLoginByMaPhongBan", usernameParameter, passwordParameter, ma_phong_banParameter);
         }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang_Result> SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang(Nullable<bool> tinh_trang_tiep_nhan, Nullable<System.DateTime> start, Nullable<System.DateTime> end)
+        {
+            var tinh_trang_tiep_nhanParameter = tinh_trang_tiep_nhan.HasValue ?
+                new ObjectParameter("tinh_trang_tiep_nhan", tinh_trang_tiep_nhan) :
+                new ObjectParameter("tinh_trang_tiep_nhan", typeof(bool));
+    
+            var startParameter = start.HasValue ?
+                new ObjectParameter("start", start) :
+                new ObjectParameter("start", typeof(System.DateTime));
+    
+            var endParameter = end.HasValue ?
+                new ObjectParameter("end", end) :
+                new ObjectParameter("end", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang_Result>("SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang", tinh_trang_tiep_nhanParameter, startParameter, endParameter);
+        }
     }
 }

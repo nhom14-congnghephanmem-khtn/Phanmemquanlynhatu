@@ -75,6 +75,11 @@
   </Function>
   <Function Name="SP_Tinh_Trang_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tinh_trang_tiep_nhan" Type="bit" Mode="In" />
+    <Parameter Name="start" Type="datetime" Mode="In" />
+    <Parameter Name="end" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma_so" Type="varchar" Mode="In" />
     <Parameter Name="ho_ten" Type="nvarchar" Mode="In" />

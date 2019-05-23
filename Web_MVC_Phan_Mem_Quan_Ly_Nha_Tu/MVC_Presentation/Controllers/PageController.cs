@@ -64,65 +64,47 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
-        private static long Fix(double Number)
+        [HttpGet]
+        public ActionResult DanhSachPhamNhanTiepNhanPhongThich(DateTime? start, DateTime? end)
         {
-            if (Number >= 0)
+            var tinhtrang = Request["sltloai"];
+            if (Request["txtformday"] == "" && Request["txttoday"] != "")
             {
-                return (long)Math.Floor(Number);
-            }
-            return (long)Math.Ceiling(Number);
-        }
-        public ActionResult DanhSachPhamNhanTiepNhanPhongThich()
-        {
-            DateTime d1 = DateTime.ParseExact("01/01/2014", "dd/MM/yyyy", null);
-            DateTime d2 = DateTime.ParseExact("06/05/2016", "dd/MM/yyyy", null);
-            int year = d2.Year - d1.Year;
-            int month = (d2.Month - d1.Month);
-            int day = d2.Day - d1.Day;
-            if (year == 0)
-            {
-                ViewBag.date = month + " tháng " + day + " ngày";
+                start = null;
+                end = Convert.ToDateTime(Request["txttoday"]);
             }
             else
             {
-                if (month == 0)
+                if(Request["txtformday"] != null && Request["txttoday"] != null)
                 {
-                    ViewBag.date = year + " năm " + day + " ngày";
+                    start = Convert.ToDateTime(Request["txtformday"]);
+                    end = Convert.ToDateTime(Request["txttoday"]);
+                }
+            }
+            bool tinhtrangtiepnhan;
+            List<Tinh_Trang_Thong_Tin_Pham_Nhan_Objects> lst;
+            if (start == null && end == null)
+            {
+                lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElements();
+            }
+            else
+            {
+                if (end == null)
+                {
+                    end = DateTime.Now;
+                }
+                if (tinhtrang == "0")
+                {
+                    tinhtrangtiepnhan = false;
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
                 }
                 else
                 {
-                    if (day == 0)
-                    {
-                        ViewBag.date = year + " năm " + month + " tháng";
-                    }
-                    else
-                    {
-                        if (year == 0 && month == 0)
-                        {
-                            ViewBag.date = day + " ngày";
-                        }
-                        else
-                        {
-                            if (year == 0 && day == 0)
-                            {
-                                ViewBag.date = month + " tháng";
-                            }
-                            else
-                            {
-                                if (month == 0 && day == 0)
-                                {
-                                    ViewBag.date = year + " năm";
-                                }
-                                else
-                                {
-                                    ViewBag.date = year + " năm " + month + " tháng " + day + " ngày";
-                                }
-                            }
-                        }
-                    }
-                }  
+                    tinhtrangtiepnhan = true;
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                }      
             }
-            return View();
+            return View(lst);
         }
     }
 }
