@@ -97,33 +97,25 @@ namespace MVC_Presentation.Controllers
                 if (tinhtrang == "0")
                 {
                     tinhtrangtiepnhan = false;
-                    HttpCookie tt = new HttpCookie("tinhtrangtiepnhan");
-                    tt.Value = tinhtrangtiepnhan.ToString();
-                    tt.Expires = DateTime.Now.AddDays(15);
-                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                    Session["tinhtrang"] = tinhtrang;
                     Session["start"] = start;
                     Session["end"] = end;
-                    Response.Cookies.Add(tt);
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                    
                 }
                 else
                 {
                     tinhtrangtiepnhan = true;
                     lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
-                    HttpCookie tt = new HttpCookie("tinhtrangtiepnhan");
-                    tt.Value = tinhtrangtiepnhan.ToString();
-                    tt.Expires = DateTime.Now.AddDays(15);
                     Session["start"] = start;
                     Session["end"] = end;
-                    Response.Cookies.Add(tt);
                 }      
             }
             return View(lst);
         }
         [HttpGet]
-        public ActionResult InDanhSachPhamNhanTiepNhanPhongThich()
+        public ActionResult InDanhSachPhamNhanTiepNhanPhongThich(string tinhtrang, DateTime? start, DateTime? end)
         {
-            DateTime? start = null, end = null;
-            string tinhtrang = Response.Cookies["tinhtrangtiepnhan"].Value.ToString();
             var fromday = "";
             var today = "";
             if (Session["start"] == null)
@@ -167,7 +159,7 @@ namespace MVC_Presentation.Controllers
                 {
                     end = DateTime.Now;
                 }
-                if (tinhtrang.ToString() == "false")
+                if (tinhtrang.ToString() == "0")
                 {
                     tinhtrangtiepnhan = false;
                     lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
@@ -181,9 +173,9 @@ namespace MVC_Presentation.Controllers
             return View(lst);
         }
 
-        public ActionResult PrintViewPDF()
+        public ActionResult PrintViewPDF(string tinhtrang, DateTime? start, DateTime? end)
         {
-            var report = new ActionAsPdf("InDanhSachPhamNhanTiepNhanPhongThich");
+            var report = new ActionAsPdf("InDanhSachPhamNhanTiepNhanPhongThich", new { tinhtrang = Session["tinhtrang"], start = Session["start"], end = Session["end"] });
             return report;
         }
     }
