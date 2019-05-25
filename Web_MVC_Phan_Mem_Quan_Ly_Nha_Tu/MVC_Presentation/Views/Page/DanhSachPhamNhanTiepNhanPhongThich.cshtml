@@ -41,7 +41,6 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Đăng Nhập</a></li>
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -100,12 +99,10 @@
                         <button type="submit" class="btn btn-success">Tìm Kiếm</button>
                     </div>
                 }
-                <form action="goiykhauphanan_submit" method="get" accept-charset="utf-8"></form>
-                <form action="" method="" class="form-tt"></form>
 
                 <div class="col-sm-12 btnPhongThich">
-                    <button type="button" class="pull-left btn btn-primary">Thêm</button>
-                    <button type="button" class="pull-right btn btn-success">Xuất PDF</button>
+                    <button type="button" class="pull-left btn btn-primary" onclick="location.href='@Url.Action("ThemPhamNhan","Page")'">Thêm</button>
+                    <button type="button" class="pull-right btn btn-success" onclick="location.href='@Url.Action("PrintViewPDF","Page")'">Xuất PDF</button>
                 </div>
                 <table class="table">
                     <thead>

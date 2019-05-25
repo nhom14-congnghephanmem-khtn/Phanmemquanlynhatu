@@ -43,9 +43,87 @@ namespace MVC_DataAccessLayers.DAL
                 obj.khau_phan_an = item.khau_phan_an;
                 obj.chi_tiet_khau_phan_an = item.chi_tiet_khau_phan_an;
                 obj.ma_so_pham_nhan = item.ma_so_pham_nhan;
+                DateTime d1 = DateTime.Now;
+                DateTime d2 = Convert.ToDateTime(obj.ngay_phong_thich);
+                int year = d2.Year - d1.Year;
+                int month;
+                int day;
+                if (d1.Month > d2.Month)
+                {
+                    month = d1.Month - d2.Month;
+                }
+                else
+                {
+                    if (d1.Month < d2.Month)
+                    {
+                        month = d2.Month - d1.Month;
+                    }
+                    else
+                    {
+                        month = d1.Month - d2.Month;
+                    }
+                }
+                if (d1.Day > d2.Day)
+                {
+                    day = d1.Day - d2.Day;
+                }
+                else
+                {
+                    if (d1.Day < d2.Day)
+                    {
+                        day = d2.Day - d1.Day;
+                    }
+                    else
+                    {
+                        day = d1.Day - d2.Day;
+                    }
+                }
+                if (year == 0)
+                {
+                    obj.thoi_gian_giam = month + " tháng " + day + " ngày";
+                }
+                else
+                {
+                    if (month == 0)
+                    {
+                        obj.thoi_gian_giam = year + " năm " + day + " ngày";
+                    }
+                    else
+                    {
+                        if (day == 0)
+                        {
+                            obj.thoi_gian_giam = year + " năm " + month + " tháng";
+                        }
+                        else
+                        {
+                            if (year == 0 && month == 0)
+                            {
+                                obj.thoi_gian_giam = day + " ngày";
+                            }
+                            else
+                            {
+                                if (year == 0 && day == 0)
+                                {
+                                    obj.thoi_gian_giam = month + " tháng";
+                                }
+                                else
+                                {
+                                    if (month == 0 && day == 0)
+                                    {
+                                        obj.thoi_gian_giam = year + " năm";
+                                    }
+                                    else
+                                    {
+                                        obj.thoi_gian_giam = year + " năm " + month + " tháng " + day + " ngày";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 lst.Add(obj);
             }
-            return lst;
+                return lst;
         }
 
         public List<Tinh_Trang_Thong_Tin_Pham_Nhan_Objects> GetElementsByDateAndTinhTrang(bool tinhtrangtiepnhan, DateTime? start, DateTime? end)
@@ -79,10 +157,40 @@ namespace MVC_DataAccessLayers.DAL
                 obj.chi_tiet_khau_phan_an = item.chi_tiet_khau_phan_an;
                 obj.ma_so_pham_nhan = item.ma_so_pham_nhan;
                 DateTime d1 = DateTime.Now;
-                DateTime d2 = DateTime.ParseExact(obj.ngay_phong_thich.ToString(), "dd/MM/yyyy", null);
+                DateTime d2 = Convert.ToDateTime(obj.ngay_phong_thich);
                 int year = d2.Year - d1.Year;
-                int month = (d2.Month - d1.Month);
-                int day = d2.Day - d1.Day;
+                int month;
+                int day;
+                if (d1.Month > d2.Month)
+                {
+                    month = d1.Month - d2.Month;
+                }
+                else
+                {
+                    if (d1.Month < d2.Month)
+                    {
+                        month = d2.Month - d1.Month;
+                    }
+                    else
+                    {
+                        month = d1.Month - d2.Month;
+                    }
+                }
+                if (d1.Day > d2.Day)
+                {
+                    day = d1.Day - d2.Day;
+                }
+                else
+                {
+                    if (d1.Day < d2.Day)
+                    {
+                        day = d2.Day - d1.Day;
+                    }
+                    else
+                    {
+                        day = d1.Day - d2.Day;
+                    }
+                }
                 if (year == 0)
                 {
                     obj.thoi_gian_giam = month + " tháng " + day + " ngày";

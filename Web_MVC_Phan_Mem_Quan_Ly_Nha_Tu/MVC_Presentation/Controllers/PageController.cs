@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC_BusinessLogicLayers.BLL;
 using MVC_ValueObjects;
+using Rotativa;
 
 namespace MVC_Presentation.Controllers
 {
@@ -96,15 +97,94 @@ namespace MVC_Presentation.Controllers
                 if (tinhtrang == "0")
                 {
                     tinhtrangtiepnhan = false;
+                    HttpCookie tt = new HttpCookie("tinhtrangtiepnhan");
+                    tt.Value = tinhtrangtiepnhan.ToString();
+                    tt.Expires = DateTime.Now.AddDays(15);
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                    Session["start"] = start;
+                    Session["end"] = end;
+                    Response.Cookies.Add(tt);
+                }
+                else
+                {
+                    tinhtrangtiepnhan = true;
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                    HttpCookie tt = new HttpCookie("tinhtrangtiepnhan");
+                    tt.Value = tinhtrangtiepnhan.ToString();
+                    tt.Expires = DateTime.Now.AddDays(15);
+                    Session["start"] = start;
+                    Session["end"] = end;
+                    Response.Cookies.Add(tt);
+                }      
+            }
+            return View(lst);
+        }
+        [HttpGet]
+        public ActionResult InDanhSachPhamNhanTiepNhanPhongThich()
+        {
+            DateTime? start = null, end = null;
+            string tinhtrang = Response.Cookies["tinhtrangtiepnhan"].Value.ToString();
+            var fromday = "";
+            var today = "";
+            if (Session["start"] == null)
+            {
+                fromday = "";
+            }
+            else
+            {
+                fromday = Session["start"].ToString();
+            }
+            if (Session["end"] == null)
+            {
+                today = "";
+            }
+            else
+            {
+                today = Session["end"].ToString();
+            }
+            bool tinhtrangtiepnhan;
+            List<Tinh_Trang_Thong_Tin_Pham_Nhan_Objects> lst;
+            if (fromday == "" && today != "")
+            {
+                start = null;
+                end = Convert.ToDateTime(today.ToString());
+            }
+            else
+            {
+                if (fromday != "" && today != "")
+                {
+                    start = Convert.ToDateTime(fromday.ToString());
+                    end = Convert.ToDateTime(today.ToString());
+                }
+            }
+            if (start == null && end == null)
+            {
+                lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElements();
+            }
+            else
+            {
+                if (end == null)
+                {
+                    end = DateTime.Now;
+                }
+                if (tinhtrang.ToString() == "false")
+                {
+                    tinhtrangtiepnhan = false;
                     lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
                 }
                 else
                 {
                     tinhtrangtiepnhan = true;
                     lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
-                }      
+                }
             }
             return View(lst);
+        }
+
+        public ActionResult PrintViewPDF()
+        {
+            var report = new ActionAsPdf("InDanhSachPhamNhanTiepNhanPhongThich");
+            return report;
         }
     }
 }
