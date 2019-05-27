@@ -51,15 +51,15 @@
         <div class="row">
             <div class="col-md-4 sidebar-left-cai-tao">
                 <ul>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Danh Sách Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Phạm Nhân Cần Chăm Sóc</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Cập Nhật Sức Khoẻ</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Thêm Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Xuất Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Hoạt Động Của Bộ Phận</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Gợi Ý Khẩu Phần Ăn</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Cải Tạo</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangPhamNhan","Page")" title="">Tình Trạng Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhan","Page")" title="">Danh Sách Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay","Page")" title="">Phạm Nhân Cần Chăm Sóc</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan","Page")" title="">Cập Nhật Sức Khoẻ</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("ThemPhamNhan","Page")" title="">Thêm Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich","Page")" title="">Xuất Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("HoatDongCuaBoPhan","Page")" title="">Hoạt Động Của Bộ Phận</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("GoiYKhauPhanAn","Page")" title="">Gợi Ý Khẩu Phần Ăn</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangCaiTao","Page")" title="">Tình Trạng Cải Tạo</a></li>
 
                 </ul>
             </div>
@@ -76,7 +76,7 @@
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Mã Phạm Nhân: </label>
                         <div class="col-sm-5">
-                            <input type="text" name="txtSearch_Text" class="form-control" id="Search_text" value="@ViewBag.ma_so" placeholder="A001">
+                            <input type="text" name="txtSearch_Text" class="form-control" id="Search_text" placeholder="A001">
                             @Html.ValidationMessage("Search")
                         </div>
                         <div class="col-md-3">
@@ -85,60 +85,66 @@
                         </div>
                     </div>
                 }
-                    <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
-                        <label class="col-sm-9">@Model.ho_ten</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => m.ngay_sinh)</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
-                        <label class="col-sm-9">@Model.noi_sinh</label>
-                    </div>
-                <form action="" method="" class="form-tt"></form>
+                <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.ho_ten)</label>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.ngay_sinh)</label>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.noi_sinh)</label>
+                </div>
                 <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Sức Khoẻ </div>
 
-                <form action="" method="" class="form-tt">
+                @using (Html.BeginForm("CapNhatTinhTrangSucKhoePhamNhan", "Page", FormMethod.Post, new { @class = "form-tt" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.ma_so)
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Loại Sức Khoẻ: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Loại 1</option>
-                                <option value="1">Loại 2</option>
-                                <option value="2">Loại 3</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.loai_suc_khoe, new List<SelectListItem> {
+                            new SelectListItem { Text = "Loại 1", Value = "1"},
+                            new SelectListItem { Text = "Loại 2", Value = "2"},
+                            new SelectListItem { Text = "Loại 3", Value = "3"}
+                            }, new { @class = "custom-select form-control" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Khẩu Phần Ăn: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Bình Thường</option>
-                                <option value="1">Đặc Biệt</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.khau_phan_an, new List<SelectListItem> {
+                            new SelectListItem { Text = "Bình Thường", Value = "1"},
+                            new SelectListItem { Text = "Đặc biệt", Value = "2"}
+                            }, new { @class = "custom-select form-control" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Ghi Chú: </label>
                         <div class="col-sm-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Sức khoẻ bạn bình thường"></textarea>
+                            @Html.TextAreaFor(m => m.ghi_chu, new { @class = "form-control rounded-0", @id = "txtphamtoi", @rows = "3", @placeholder = "Sức khỏe bạn bình thường" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Kiểm Tra Kế Tiếp: </label>
                         <div class="col-sm-9">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                @Html.EditorFor(m => m.ngay_gio, new { htmlAttributes = new { @class = "form-control" } })
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <div class="tt-huy-capnhat">
+                        <button type="reset" class="btn btn-primary">Huỷ</button>
+                        <button type="submit" class="btn btn-success">Cập nhật</button>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -225,14 +231,6 @@
 	$(function () {
 		$('#datetimepicker1').datetimepicker();
         });
-    </script>
-    <script>
-        $(function ()){
-            $('#submit').click(function () {
-                var id = $('#Search_text').val();
-                window.location.href = 'CapNhatTinhTrangSucKhoePhamNhan?ma_so=' + id;
-            });
-        };
     </script>
 </body>
 </html>

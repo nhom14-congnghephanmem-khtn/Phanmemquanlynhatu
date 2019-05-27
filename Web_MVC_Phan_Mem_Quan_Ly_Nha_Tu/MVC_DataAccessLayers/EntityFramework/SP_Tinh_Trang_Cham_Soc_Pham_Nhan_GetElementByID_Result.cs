@@ -14,8 +14,10 @@ namespace MVC_DataAccessLayers.EntityFramework
     public partial class SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result
     {
         public string ma_so { get; set; }
+        public string ho_ten { get; set; }
         public string ngay_sinh { get; set; }
         public string noi_sinh { get; set; }
-        public string ho_ten { get; set; }
+        public Nullable<int> loai_suc_khoe { get; set; }
+        public Nullable<int> khau_phan_an { get; set; }
     }
 }

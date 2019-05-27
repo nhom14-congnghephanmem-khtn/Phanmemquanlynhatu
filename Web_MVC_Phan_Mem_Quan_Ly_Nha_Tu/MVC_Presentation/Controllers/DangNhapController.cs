@@ -29,6 +29,7 @@ namespace MVC_Presentation.Controllers
                 if (data != null)
                 {
                     Session["ma_phong_ban"] = user.ma_phong_ban;
+
                     return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban});
                 }
             }

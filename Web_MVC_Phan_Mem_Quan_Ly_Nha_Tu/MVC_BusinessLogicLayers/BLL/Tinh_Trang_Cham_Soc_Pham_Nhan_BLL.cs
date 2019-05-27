@@ -19,5 +19,10 @@ namespace MVC_BusinessLogicLayers.BLL
         {
             return new Tinh_Trang_Cham_Soc_Pham_Nhan_DAL().Update(OT);
         }
+
+        public Tinh_Trang_Cham_Soc_Pham_Nhan_Objects GetElementByTop()
+        {
+            return new Tinh_Trang_Cham_Soc_Pham_Nhan_DAL().GetElementByTop();
+        }
     }
 }

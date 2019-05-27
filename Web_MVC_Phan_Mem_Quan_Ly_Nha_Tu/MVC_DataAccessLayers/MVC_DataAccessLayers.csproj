@@ -70,19 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PrisonManagement.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLogin1_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLogin_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByID_Result.cs">
@@ -106,10 +94,10 @@
     <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result.cs">
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByTop1_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElmentByID_InsertOrUpdate_Result.cs">
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Tinh_Trang_Pham_Nhan_GetElements_Result.cs">

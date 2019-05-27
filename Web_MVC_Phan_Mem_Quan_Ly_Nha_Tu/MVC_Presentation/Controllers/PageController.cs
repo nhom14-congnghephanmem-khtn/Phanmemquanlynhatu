@@ -39,10 +39,18 @@ namespace MVC_Presentation.Controllers
             Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
             if (obj == null)
             {
-                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID("PC100");
-                ModelState.AddModelError("Search", "Không tìm thấy");
+                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByTop();
             }
             return View(obj);
+        }
+        [HttpPost]
+        public ActionResult CapNhatTinhTrangSucKhoePhamNhan(Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj)
+        {
+            if(ModelState.IsValid)
+            {
+                new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().Update(obj);
+            }
+            return View();
         }
         public ActionResult DanhSachPhamNhan()
         {
