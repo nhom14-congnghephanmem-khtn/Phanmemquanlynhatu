@@ -24,5 +24,7 @@ namespace MVC_DataAccessLayers.EntityFramework
         public Nullable<System.DateTime> ngay_tiep_nhan { get; set; }
         public Nullable<bool> tinh_trang_tiep_nhan { get; set; }
         public string ma_nguoi_than { get; set; }
+        public Nullable<int> loai_suc_khoe { get; set; }
+        public Nullable<System.DateTime> ngay_phong_thich { get; set; }
     }
 }

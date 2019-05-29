@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MVC_ValueObjects.Pham_Nhan_Objects>
 @{
     Layout = null;
 }
@@ -133,34 +133,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">A001</th>
-                            <td>Nguyễn Văn A</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Trộm Tài Sản</td>
-                            <td>Mức 1</td>
-                            <td>10 Tháng</td>
-                            <td>Loại 1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A002</th>
-                            <td>Nguyễn Văn B</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Trộm Tài Sản</td>
-                            <td>Mức 1</td>
-                            <td>10 Tháng</td>
-                            <td>Loại 1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A003</th>
-                            <td>Nguyễn Văn C</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Trộm Tài Sản</td>
-                            <td>Mức 1</td>
-                            <td>10 Tháng</td>
-                            <td>Loại 1</td>
-                        </tr>
-                    </tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.ma_so</th>
+                                <td>@item.ho_ten</td>
+                                <td>@item.noi_sinh</td>
+                                <td>@item.pham_toi</td>
+                                <td>@item.muc_do_pham_toi</td>
+                                <td>@item.thoi_gian_giam</td>
+                                <td>@item.loai_suc_khoe</td>
+                            </tr>
+                        }
+                        </tbody>
                 </table>
             </div>
         </div>
@@ -216,27 +201,27 @@
         <div id="back-top" style="display: block;"><a href="#top"> Về Đầu Trang </a></div>
     </footer>
     <script type='text/javascript'>
-		// hide #back-top first
-		$("#back-top").hide();
+        // hide #back-top first
+        $("#back-top").hide();
 
-    // fade in #back-top
-    $(function () {
-    	$(window).scroll(function () {
-    		if ($(this).scrollTop() > 100) {
-    			$('#back-top').fadeIn();
-    		} else {
-    			$('#back-top').fadeOut();
-    		}
-    	});
+        // fade in #back-top
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
 
-        // scroll body to 0px on click
-        $('#back-top a').click(function () {
-        	$('body,html').animate({
-        		scrollTop: 0
-        	}, 800);
-        	return false;
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
         });
-    });
     </script>
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"> -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>

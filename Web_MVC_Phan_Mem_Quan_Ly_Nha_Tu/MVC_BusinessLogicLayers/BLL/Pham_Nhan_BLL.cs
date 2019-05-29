@@ -14,5 +14,10 @@ namespace MVC_BusinessLogicLayers.BLL
         {
             return new Pham_Nhan_DAL().Insert(OT);
         }
+
+        public override List<Pham_Nhan_Objects> GetElements()
+        {
+            return new Pham_Nhan_DAL().GetElements();
+        }
     }
 }
