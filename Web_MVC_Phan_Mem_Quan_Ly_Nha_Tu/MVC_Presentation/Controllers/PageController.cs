@@ -55,7 +55,14 @@ namespace MVC_Presentation.Controllers
         public ActionResult DanhSachPhamNhan()
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
-            return View();
+
+            List<Pham_Nhan_Objects> obj = new Pham_Nhan_BLL().GetElements();
+            if (obj == null)
+            {
+                obj = new Pham_Nhan_BLL().GetElements();
+            }
+            return View(obj);
+            
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
         {

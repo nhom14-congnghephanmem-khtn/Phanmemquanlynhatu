@@ -31,5 +31,8 @@ namespace MVC_ValueObjects
         public Nullable<bool> tinh_trang_tiep_nhan { get; set; }
         [Required(ErrorMessage = "Hãy nhập mã người thân")]
         public string ma_nguoi_than { get; set; }
+        public Nullable<int> loai_suc_khoe { get; set; }
+        public string thoi_gian_giam { get; set; }
+        public Nullable<System.DateTime> ngay_phong_thich { get; set; }
     }
 }
