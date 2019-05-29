@@ -15,6 +15,16 @@ namespace MVC_BusinessLogicLayers.BLL
             return new Nguoi_Dung_DAL().CheckLogin(username, password, roleID);
         }
 
+        public Nguoi_Dung_Objects GetElmentByUsername(string username)
+        {
+            return new Nguoi_Dung_DAL().GetElmentByUsername(username);
+        }
+
+        public Nguoi_Dung_Objects GetElmentByPassword(string password)
+        {
+            return new Nguoi_Dung_DAL().GetElmentByPassword(password);
+        }
+
         public override List<Nguoi_Dung_Objects> GetElements()
         {
             return new Nguoi_Dung_DAL().GetElements();

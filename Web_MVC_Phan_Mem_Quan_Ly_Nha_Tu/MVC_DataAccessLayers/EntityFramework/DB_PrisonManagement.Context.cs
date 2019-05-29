@@ -304,5 +304,23 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate", ma_soParameter, ho_tenParameter, ngay_sinhParameter, noi_sinhParameter, pham_toiParameter, sdt_nguoi_thanParameter, tong_so_ngay_giam_giuParameter, muc_do_pham_toiParameter, ngay_tiep_nhanParameter, tinh_trang_tiep_nhanParameter, ma_nguoi_thanParameter, loai_suc_khoeParameter, so_ngay_da_giam_giuParameter, ngay_phong_thíchParameter, khau_phan_anParameter, chi_tiet_khau_phanParameter, checkParameter);
         }
+    
+        public virtual ObjectResult<SP_Nguoi_Dung_GetElementByPassword_Result> SP_Nguoi_Dung_GetElementByPassword(string password)
+        {
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_GetElementByPassword_Result>("SP_Nguoi_Dung_GetElementByPassword", passwordParameter);
+        }
+    
+        public virtual ObjectResult<SP_Nguoi_Dung_GetElementByUserName_Result> SP_Nguoi_Dung_GetElementByUserName(string user_name)
+        {
+            var user_nameParameter = user_name != null ?
+                new ObjectParameter("user_name", user_name) :
+                new ObjectParameter("user_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_GetElementByUserName_Result>("SP_Nguoi_Dung_GetElementByUserName", user_nameParameter);
+        }
     }
 }

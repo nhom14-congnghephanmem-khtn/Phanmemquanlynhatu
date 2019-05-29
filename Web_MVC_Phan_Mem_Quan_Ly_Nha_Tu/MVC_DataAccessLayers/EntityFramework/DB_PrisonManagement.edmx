@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="username" Type="varchar" Mode="In" />
           <Parameter Name="password" Type="varchar" Mode="In" />
@@ -12,6 +12,12 @@
         </Function>
         <Function Name="SP_Nguoi_Dung_GetElementByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ma_so" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Nguoi_Dung_GetElementByPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Nguoi_Dung_GetElementByUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_name" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SP_Nguoi_Dung_GetElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_Nguoi_Dung_GetUserByMa_Phong_Ban" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -81,8 +87,7 @@
           <Parameter Name="check" Type="bit" Mode="In" />
         </Function>
         <EntityContainer Name="DB_PrisonManagementModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_PrisonManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -93,11 +98,11 @@
             <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Nguoi_Dung_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByID_Result)">
-            <Parameter Name="ma_so" Mode="In" Type="String" />
+          <Parameter Name="ma_so" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Nguoi_Dung_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElements_Result)" />
           <FunctionImport Name="SP_Nguoi_Dung_GetUserByMa_Phong_Ban" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result)">
-            <Parameter Name="username" Mode="In" Type="String" />
+          <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Pham_Nhan_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Pham_Nhan_GetElements_Result)" />
           <FunctionImport Name="SP_Pham_Nhan_InsertOrUpdate">
@@ -115,7 +120,7 @@
             <Parameter Name="check" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="SP_Phong_Ban_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Phong_Ban_GetElementByID_Result)">
-            <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
+          <Parameter Name="ma_phong_ban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Phong_Ban_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Phong_Ban_GetElements_Result)" />
           <FunctionImport Name="sp_renamediagram">
@@ -124,7 +129,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID" ReturnType="Collection(DB_PrisonManagementModel.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result)">
-            <Parameter Name="ma_so" Mode="In" Type="String" />
+          <Parameter Name="ma_so" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByTop1" ReturnType="Collection(DB_PrisonManagementModel.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByTop1_Result)" />
           <FunctionImport Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements" ReturnType="Collection(DB_PrisonManagementModel.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result)" />
@@ -161,6 +166,12 @@
             <Parameter Name="khau_phan_an" Mode="In" Type="Int32" />
             <Parameter Name="chi_tiet_khau_phan" Mode="In" Type="String" />
             <Parameter Name="check" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Nguoi_Dung_GetElementByPassword" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByPassword_Result)">
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Nguoi_Dung_GetElementByUserName" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByUserName_Result)">
+            <Parameter Name="user_name" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
@@ -304,6 +315,24 @@
           <Property Type="Int32" Name="khau_phan_an" Nullable="true" />
           <Property Type="String" Name="chi_tiet_khau_phan_an" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="ma_so_pham_nhan" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_Nguoi_Dung_GetElementByPassword_Result">
+          <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="hoten" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ma_phong_ban" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="khau_phan_an" Nullable="true" />
+          <Property Type="String" Name="chi_tiet_khau_phan_an" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_Nguoi_Dung_GetElementByUserName_Result">
+          <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="hoten" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ma_phong_ban" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="khau_phan_an" Nullable="true" />
+          <Property Type="String" Name="chi_tiet_khau_phan_an" Nullable="true" MaxLength="255" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -509,6 +538,32 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" FunctionName="DB_PrisonManagementModel.Store.SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetElementByPassword" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetElementByPassword">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByPassword_Result">
+                <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+                <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+                <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetElementByUserName" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetElementByUserName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByUserName_Result">
+                <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+                <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+                <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

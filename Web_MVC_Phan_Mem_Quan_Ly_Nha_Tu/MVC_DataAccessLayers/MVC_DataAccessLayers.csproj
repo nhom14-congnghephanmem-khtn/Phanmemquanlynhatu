@@ -76,6 +76,12 @@
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByID_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByPassword_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByUserName_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>

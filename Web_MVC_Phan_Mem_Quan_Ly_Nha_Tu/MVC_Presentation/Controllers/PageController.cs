@@ -55,6 +55,7 @@ namespace MVC_Presentation.Controllers
         public ActionResult DanhSachPhamNhan()
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
             return View();
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
