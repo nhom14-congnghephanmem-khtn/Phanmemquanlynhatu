@@ -24,6 +24,12 @@ namespace MVC_Presentation
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Danh sách phạm nhân",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Page", action = "DanhSachPhamNhan", id = UrlParameter.Optional }
+            );
         }
     }
 }

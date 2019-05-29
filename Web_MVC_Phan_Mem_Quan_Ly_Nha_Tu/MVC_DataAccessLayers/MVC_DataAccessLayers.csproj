@@ -53,6 +53,7 @@
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\Nguoi_Dung_DAL.cs" />
     <Compile Include="DAL\Pham_Nhan_DAL.cs" />
+    <Compile Include="DAL\Tinh_Trang_Cham_Soc_Pham_Nhan_DAL.cs" />
     <Compile Include="DAL\Tinh_Trang_Thong_Tin_Pham_Nhan_DAL.cs" />
     <Compile Include="EntityFramework\DB_PrisonManagement.Context.cs">
       <AutoGen>True</AutoGen>
@@ -69,19 +70,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PrisonManagement.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLogin_Result.cs">
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByID_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Pham_Nhan_GetElements_Result.cs">
@@ -93,7 +91,19 @@
     <Compile Include="EntityFramework\SP_Phong_Ban_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByTop1_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Tinh_Trang_Pham_Nhan_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElementsByDateAndTinhTrang_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements_Result.cs">

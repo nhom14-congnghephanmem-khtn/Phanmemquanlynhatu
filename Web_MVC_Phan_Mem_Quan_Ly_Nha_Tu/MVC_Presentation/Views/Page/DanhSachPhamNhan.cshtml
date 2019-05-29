@@ -40,7 +40,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Đăng Nhập</a></li>
+                    <li><a href="#"></a></li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -50,15 +50,28 @@
         <div class="row">
             <div class="col-md-4 sidebar-left-cai-tao">
                 <ul>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Danh Sách Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Phạm Nhân Cần Chăm Sóc</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Cập Nhật Sức Khoẻ</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Thêm Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Xuất Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Hoạt Động Của Bộ Phận</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Gợi Ý Khẩu Phần Ăn</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Cải Tạo</a></li>
+                    @{
+                        if (ViewBag.ma_phong_ban == "1")
+                        {
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Danh Sách Phạm Nhân</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Phạm Nhân Cần Chăm Sóc</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Cập Nhật Sức Khoẻ</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Thêm Phạm Nhân</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Xuất Phạm Nhân</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Hoạt Động Của Bộ Phận</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Gợi Ý Khẩu Phần Ăn</a></li>
+                            <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Cải Tạo</a></li>
+                        }
+                        else
+                        {
+                            if (ViewBag.ma_phong_ban == "2")
+                            {
+                                <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
+                            }
+                        }
+                    }
+
 
                 </ul>
             </div>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_PrisonManagementModelStoreContainer" CdmEntityContainer="DB_PrisonManagementEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DB_PrisonManagementModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DB_PrisonManagementModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DB_PrisonManagementModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DB_PrisonManagementModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DB_PrisonManagementModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_CheckLogin" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_CheckLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_CheckLogin_Result">
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetElementByID" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetElementByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetElementByID_Result">
+          <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+          <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+          <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_GetElements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_GetElements_Result">
+          <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+          <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+          <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Phong_Ban_GetElementByID" FunctionName="DB_PrisonManagementModel.Store.SP_Phong_Ban_GetElementByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Phong_Ban_GetElementByID_Result">
+          <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+          <ScalarProperty Name="ten_phong_ban" ColumnName="ten_phong_ban" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Phong_Ban_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Phong_Ban_GetElements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Phong_Ban_GetElements_Result">
+          <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
+          <ScalarProperty Name="ten_phong_ban" ColumnName="ten_phong_ban" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DB_PrisonManagementModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DB_PrisonManagementModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SP_Pham_Nhan_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Pham_Nhan_GetElements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Pham_Nhan_GetElements_Result">
+          <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+          <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+          <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+          <ScalarProperty Name="noi_sinh" ColumnName="noi_sinh" />
+          <ScalarProperty Name="pham_toi" ColumnName="pham_toi" />
+          <ScalarProperty Name="sdt_nguoi_than" ColumnName="sdt_nguoi_than" />
+          <ScalarProperty Name="tong_so_ngay_giam_giu" ColumnName="tong_so_ngay_giam_giu" />
+          <ScalarProperty Name="muc_do_pham_toi" ColumnName="muc_do_pham_toi" />
+          <ScalarProperty Name="ngay_tiep_nhan" ColumnName="ngay_tiep_nhan" />
+          <ScalarProperty Name="tinh_trang_tiep_nhan" ColumnName="tinh_trang_tiep_nhan" />
+          <ScalarProperty Name="ma_nguoi_than" ColumnName="ma_nguoi_than" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Pham_Nhan_InsertOrUpdate" FunctionName="DB_PrisonManagementModel.Store.SP_Pham_Nhan_InsertOrUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_Tinh_Trang_Pham_Nhan_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Tinh_Trang_Pham_Nhan_GetElements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Tinh_Trang_Pham_Nhan_GetElements_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="loai_suc_khoe" ColumnName="loai_suc_khoe" />
+          <ScalarProperty Name="so_ngay_da_giam_giu" ColumnName="so_ngay_da_giam_giu" />
+          <ScalarProperty Name="ngay_phong_thich" ColumnName="ngay_phong_thich" />
+          <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+          <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+          <ScalarProperty Name="ma_so_pham_nhan" ColumnName="ma_so_pham_nhan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements" FunctionName="DB_PrisonManagementModel.Store.SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Tinh_Trang_Thong_Tin_Pham_Nhan_GetElements_Result">
+          <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+          <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+          <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+          <ScalarProperty Name="noi_sinh" ColumnName="noi_sinh" />
+          <ScalarProperty Name="pham_toi" ColumnName="pham_toi" />
+          <ScalarProperty Name="sdt_nguoi_than" ColumnName="sdt_nguoi_than" />
+          <ScalarProperty Name="tong_so_ngay_giam_giu" ColumnName="tong_so_ngay_giam_giu" />
+          <ScalarProperty Name="muc_do_pham_toi" ColumnName="muc_do_pham_toi" />
+          <ScalarProperty Name="ngay_tiep_nhan" ColumnName="ngay_tiep_nhan" />
+          <ScalarProperty Name="tinh_trang_tiep_nhan" ColumnName="tinh_trang_tiep_nhan" />
+          <ScalarProperty Name="ma_nguoi_than" ColumnName="ma_nguoi_than" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="loai_suc_khoe" ColumnName="loai_suc_khoe" />
+          <ScalarProperty Name="so_ngay_da_giam_giu" ColumnName="so_ngay_da_giam_giu" />
+          <ScalarProperty Name="ngay_phong_thich" ColumnName="ngay_phong_thich" />
+          <ScalarProperty Name="khau_phan_an" ColumnName="khau_phan_an" />
+          <ScalarProperty Name="chi_tiet_khau_phan_an" ColumnName="chi_tiet_khau_phan_an" />
+          <ScalarProperty Name="ma_so_pham_nhan" ColumnName="ma_so_pham_nhan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" FunctionName="DB_PrisonManagementModel.Store.SP_Tinh_Trang_Thong_Tin_Pham_Nhan_InsertOrUpdate" />
+  </EntityContainerMapping>
+</Mapping>

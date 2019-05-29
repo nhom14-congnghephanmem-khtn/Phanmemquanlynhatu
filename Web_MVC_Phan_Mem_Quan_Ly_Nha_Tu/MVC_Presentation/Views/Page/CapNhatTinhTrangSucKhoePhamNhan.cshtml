@@ -1,4 +1,5 @@
-﻿
+﻿@model MVC_ValueObjects.Tinh_Trang_Cham_Soc_Pham_Nhan_Objects
+
 @{
     Layout = null;
 }
@@ -50,15 +51,15 @@
         <div class="row">
             <div class="col-md-4 sidebar-left-cai-tao">
                 <ul>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Danh Sách Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Phạm Nhân Cần Chăm Sóc</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Cập Nhật Sức Khoẻ</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Thêm Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Xuất Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Hoạt Động Của Bộ Phận</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Gợi Ý Khẩu Phần Ăn</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Cải Tạo</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangPhamNhan","Page")" title="">Tình Trạng Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhan","Page")" title="">Danh Sách Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay","Page")" title="">Phạm Nhân Cần Chăm Sóc</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan","Page")" title="">Cập Nhật Sức Khoẻ</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("ThemPhamNhan","Page")" title="">Thêm Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich","Page")" title="">Xuất Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("HoatDongCuaBoPhan","Page")" title="">Hoạt Động Của Bộ Phận</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("GoiYKhauPhanAn","Page")" title="">Gợi Ý Khẩu Phần Ăn</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangCaiTao","Page")" title="">Tình Trạng Cải Tạo</a></li>
 
                 </ul>
             </div>
@@ -66,78 +67,84 @@
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> CẬP NHẬT TÌNH TRẠNG SỨC KHOẺ PHẠM NHÂN</h3>
 
                 <!-- <div class="tt-timkiem-xoa">
-                    <button type="button" class="btn btn-primary">Xoá</button>
-                    <button type="button" class="btn btn-success">Tìm Kiếm</button>
-                </div> -->
-                <div for="inputPassword" class="col-sm-3 lable-mucdo">Tìm Kiếm </div>
-                <form action="" method="" class="form-tt">
+        <button type="button" class="btn btn-primary">Xoá</button>
+        <button type="button" class="btn btn-success">Tìm Kiếm</button>
+    </div> -->
+                @using (Html.BeginForm("CapNhatTinhTrangSucKhoePhamNhan", "Page", FormMethod.Get, new { @class = "form-tt" }))
+                {
+                    <div for="inputPassword" class="col-sm-10 lable-mucdo">Tìm Kiếm </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Mã Phạm Nhân: </label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="staticEmail" placeholder="A001">
+                        <div class="col-sm-5">
+                            <input type="text" name="txtSearch_Text" class="form-control" id="Search_text" placeholder="A001">
+                            @Html.ValidationMessage("Search")
                         </div>
                         <div class="col-md-3">
-                            <button type="button" class="btn btn-primary">Xoá</button>
-                            <button type="button" class="btn btn-success pull-right">Tìm Kiếm</button>
+                            <button type="reset" class="btn btn-primary">Xoá</button>
+                            <button type="submit" id="submit" class="btn btn-success pull-right">Tìm Kiếm</button>
                         </div>
                     </div>
-                </form>
+                }
                 <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
-
-                <form action="" method="" class="form-tt">
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
-                        <label class="col-sm-9">Nguyễn Văn A</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
-                        <label class="col-sm-9">25/01/1993</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
-                        <label class="col-sm-9">Hồ Chí Minh</label>
-                    </div>
-                </form>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.ho_ten)</label>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.ngay_sinh)</label>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
+                    <label class="col-sm-9">@Html.DisplayFor(m => m.noi_sinh)</label>
+                </div>
                 <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Sức Khoẻ </div>
 
-                <form action="" method="" class="form-tt">
+                @using (Html.BeginForm("CapNhatTinhTrangSucKhoePhamNhan", "Page", FormMethod.Post, new { @class = "form-tt" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.ma_so)
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Loại Sức Khoẻ: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Loại 1</option>
-                                <option value="1">Loại 2</option>
-                                <option value="2">Loại 3</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.loai_suc_khoe, new List<SelectListItem> {
+                            new SelectListItem { Text = "Loại 1", Value = "1"},
+                            new SelectListItem { Text = "Loại 2", Value = "2"},
+                            new SelectListItem { Text = "Loại 3", Value = "3"}
+                            }, new { @class = "custom-select form-control" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Khẩu Phần Ăn: </label>
                         <div class="col-sm-9">
-                            <select class="custom-select form-control">
-                                <option selected>Bình Thường</option>
-                                <option value="1">Đặc Biệt</option>
-                            </select>
+                            @Html.DropDownListFor(m => m.khau_phan_an, new List<SelectListItem> {
+                            new SelectListItem { Text = "Bình Thường", Value = "1"},
+                            new SelectListItem { Text = "Đặc biệt", Value = "2"}
+                            }, new { @class = "custom-select form-control" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Ghi Chú: </label>
                         <div class="col-sm-9">
-                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Sức khoẻ bạn bình thường"></textarea>
+                            @Html.TextAreaFor(m => m.ghi_chu, new { @class = "form-control rounded-0", @id = "txtphamtoi", @rows = "3", @placeholder = "Sức khỏe bạn bình thường" })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Kiểm Tra Kế Tiếp: </label>
                         <div class="col-sm-9">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                @Html.EditorFor(m => m.ngay_gio, new { htmlAttributes = new { @class = "form-control" } })
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <div class="tt-huy-capnhat">
+                        <button type="reset" class="btn btn-primary">Huỷ</button>
+                        <button type="submit" class="btn btn-success">Cập nhật</button>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -223,7 +230,7 @@
     <script type="text/javascript">
 	$(function () {
 		$('#datetimepicker1').datetimepicker();
-	});
+        });
     </script>
 </body>
 </html>

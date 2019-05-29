@@ -34,5 +34,6 @@ namespace MVC_ValueObjects
         public Nullable<int> khau_phan_an { get; set; }
         public string chi_tiet_khau_phan_an { get; set; }
         public string ma_so_pham_nhan { get; set; }
+        public string thoi_gian_giam { get; set; }
     }
 }

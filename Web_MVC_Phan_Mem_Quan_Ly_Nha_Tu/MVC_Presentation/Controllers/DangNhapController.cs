@@ -17,16 +17,20 @@ namespace MVC_Presentation.Controllers
         {
             return View();
         }
+        public static string SESSION_ACCOUNT = "SESSION_ACCOUNT";
         //GET: DangNhap
         [HttpPost]
         public ActionResult DangNhap(Nguoi_Dung_Objects ouser)
         {
             if(ModelState.IsValid)
             {
-                var data = new Nguoi_Dung_BLL().CheckLogin(ouser.user_name, ouser.password);
+                var user = new Nguoi_Dung_BLL().GetUserByMaPhongBan(ouser.user_name);
+                var data = new Nguoi_Dung_BLL().CheckLogin(ouser.user_name, ouser.password, user.ma_phong_ban);
                 if (data != null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    Session["ma_phong_ban"] = user.ma_phong_ban;
+
+                    return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban});
                 }
             }
             return RedirectToAction("DangNhap", "DangNhap");

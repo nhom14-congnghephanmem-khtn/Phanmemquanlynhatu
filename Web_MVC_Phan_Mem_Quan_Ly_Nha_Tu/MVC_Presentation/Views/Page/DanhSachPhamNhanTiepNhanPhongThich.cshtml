@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MVC_ValueObjects.Tinh_Trang_Thong_Tin_Pham_Nhan_Objects>
 @{
     Layout = null;
 }
@@ -41,7 +41,6 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Đăng Nhập</a></li>
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -50,37 +49,36 @@
         <div class="row">
             <div class="col-md-4 sidebar-left-cai-tao">
                 <ul>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Danh Sách Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Phạm Nhân Cần Chăm Sóc</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Cập Nhật Sức Khoẻ</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Thêm Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Xuất Phạm Nhân</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Hoạt Động Của Bộ Phận</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Gợi Ý Khẩu Phần Ăn</a></li>
-                    <li><span class="glyphicon glyphicon-ok"></span><a href="" title="">Tình Trạng Cải Tạo</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangPhamNhan","Page")" title="">Tình Trạng Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhan","Page")" title="">Danh Sách Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay","Page")" title="">Phạm Nhân Cần Chăm Sóc</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan","Page")" title="">Cập Nhật Sức Khoẻ</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("ThemPhamNhan","Page")" title="">Thêm Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich","Page")" title="">Xuất Phạm Nhân</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("HoatDongCuaBoPhan","Page")" title="">Hoạt Động Của Bộ Phận</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("GoiYKhauPhanAn","Page")" title="">Gợi Ý Khẩu Phần Ăn</a></li>
+                    <li><span class="glyphicon glyphicon-ok"></span><a href="@Html.ActionLink("TinhTrangCaiTao","Page")" title="">Tình Trạng Cải Tạo</a></li>
 
                 </ul>
             </div>
             <div class="col-md-8 sidebar-right-cai-tao">
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> XUẤT DANH SÁCH PHẠM NHÂN TIẾP NHẬN PHÓNG THÍCH</h3>
-                <form action="goiykhauphanan_submit" method="get" accept-charset="utf-8">
+                @using (Html.BeginForm("DanhSachPhamNhanTiepNhanPhongThich", "Page", FormMethod.Get))
+                {
                     <div class="form-group row">
                         <label for="" class="col-sm-2">Loại:</label>
                         <div class="col-sm-10">
-                            <select class="custom-select form-control">
-                                <option selected>Tiếp Nhận</option>
+                            <select name="sltloai" class="custom-select form-control">
+                                <option selected value="0">Tiếp Nhận</option>
                                 <option value="1">Phóng Thích</option>
                             </select>
                         </div>
                     </div>
-                </form>
-                <form action="" method="" class="form-tt">
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Từ Ngày: </label>
                         <div class="col-sm-4">
                             <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
+                                <input type='datetime' name="txtformday" class="form-control" value="" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -89,21 +87,22 @@
                         <label for="staticEmail" class="col-sm-2 col-form-label">Đến Ngày: </label>
                         <div class="col-sm-4">
                             <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
+                                <input type='datetime' class="form-control" name="txttoday" value="" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </form>
-                <div class="tt-huy-capnhat">
-                    <button type="button" class="btn btn-primary">Xoá</button>
-                    <button type="button" class="btn btn-success">Tìm Kiếm</button>
-                </div>
+                    <div class="tt-huy-capnhat">
+                        <button type="reset" class="btn btn-primary">Xoá</button>
+                        <button type="submit" class="btn btn-success">Tìm Kiếm</button>
+                    </div>
+                }
+
                 <div class="col-sm-12 btnPhongThich">
-                    <button type="button" class="pull-left btn btn-primary">Thêm</button>
-                    <button type="button" class="pull-right btn btn-success">Xuất PDF</button>
+                    <button type="button" class="pull-left btn btn-primary" onclick="location.href='@Url.Action("ThemPhamNhan","Page")'">Thêm</button>
+                    <button type="button" class="pull-right btn btn-success" onclick="location.href='@Url.Action("PrintViewPDF","Page", new { target="_blank"})'">Xuất PDF</button>
                 </div>
                 <table class="table">
                     <thead>
@@ -118,33 +117,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">A001</th>
-                            <td>Nguyễn Văn A</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Mức 1</td>
-                            <td>10 Th</td>
-                            <td>Loại 1</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A001</th>
-                            <td>Nguyễn Văn A</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Mức 1</td>
-                            <td>10 Th</td>
-                            <td>Loại 1</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A001</th>
-                            <td>Nguyễn Văn A</td>
-                            <td>Hồ Chí Minh</td>
-                            <td>Mức 1</td>
-                            <td>10 Th</td>
-                            <td>Loại 1</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật</button></td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.ma_so</th>
+                                <td>@item.ho_ten</td>
+                                <td>@item.noi_sinh</td>
+                                <td>@item.muc_do_pham_toi</td>
+                                <td>
+                                    @item.thoi_gian_giam
+                                </td>
+                                <td>@item.loai_suc_khoe</td>
+                                <td><button type="button" class="btn btn-success">Cập Nhật</button></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
@@ -229,8 +215,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
-	$(function () {
-		$('#datetimepicker1').datetimepicker();
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker();
 	});
     </script>
 </body>
