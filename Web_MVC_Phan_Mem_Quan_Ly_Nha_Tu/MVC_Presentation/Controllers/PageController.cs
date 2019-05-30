@@ -57,6 +57,7 @@ namespace MVC_Presentation.Controllers
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             CultureInfo provider = CultureInfo.InvariantCulture;
             DateTime ngayPhongThichFrom = DateTime.ParseExact("01-01-1970", "dd-mm-yyyy", provider);
             DateTime ngayPhongThichTo = DateTime.ParseExact("01-01-2500", "dd-mm-yyyy", provider);
@@ -110,7 +111,9 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult TinhTrangPhamNhan()
         {
-            String maNguoiThan = Session["ma_nguoi_than"].ToString();
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            String maNguoiThan = Session["ma_nhan_than"].ToString();
             var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan(maNguoiThan);
             List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
             lst.Add(tinhTrangPhamNhan);

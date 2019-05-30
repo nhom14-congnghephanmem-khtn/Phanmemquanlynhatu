@@ -15,5 +15,6 @@ namespace MVC_DataAccessLayers.EntityFramework
     {
         public string user_name { get; set; }
         public string password { get; set; }
+        public string ma_so { get; set; }
     }
 }

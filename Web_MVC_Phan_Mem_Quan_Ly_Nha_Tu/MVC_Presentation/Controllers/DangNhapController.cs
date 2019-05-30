@@ -40,6 +40,7 @@ namespace MVC_Presentation.Controllers
                     var data = new Nguoi_Dung_BLL().CheckLogin(ouser.user_name, ouser.password, phongban.ma_phong_ban);
                     if (data != null)
                     {
+                        Session["ma_nhan_than"] = data.ma_so;
                         Session["ma_phong_ban"] = phongban.ma_phong_ban;
                         Session["username"] = ouser.user_name;
                         if(phongban.ma_phong_ban == "1")
