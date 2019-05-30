@@ -100,7 +100,13 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult HoatDongCuaBoPhan()
         {
-            return View();
+            var maPhongBan = Request["txtSearch_PhongBan"];
+            Hoat_Dong_Phong_Ban_Objects ret = new Hoat_Dong_Phong_Ban_Objects();
+            ret.PhongBans = new Phong_Ban_BLL().GetDanhSachPhongBan();
+
+
+
+            return View(ret);
         }
         public ActionResult TinhTrangPhamNhan()
         {

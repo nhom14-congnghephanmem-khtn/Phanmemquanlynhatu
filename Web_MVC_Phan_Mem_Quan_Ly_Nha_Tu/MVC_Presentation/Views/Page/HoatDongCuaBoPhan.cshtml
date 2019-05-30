@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_ValueObjects.Hoat_Dong_Phong_Ban_Objects
 @{
     Layout = null;
 }
@@ -63,25 +63,28 @@
             </div>
             <div class="col-md-8 sidebar-right-cai-tao">
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> HOẠT ĐỘNG CỦA BỘ PHẬN</h3>
-                <form action="goiykhauphanan_submit" method="get" accept-charset="utf-8">
-                    <div class="form-group row">
-                        <label for="" class="col-sm-2">Bộ Phận:</label>
-                        <div class="col-sm-7">
-                            <select class="custom-select form-control">
-                                <option selected>Tất Cả</option>
-                                <option value="1">Quản Giáo</option>
-                                <option value="2">Tù Nhân</option>
-                                <option value="3">Tiếp Nhận và Phòng Thích</option>
-                            </select>
-                        </div>
+                @using (Html.BeginForm("HoatDongCuaBoPhan", "Page", FormMethod.Get))
+                {
+                    <form action="goiykhauphanan_submit" method="get" accept-charset="utf-8">
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2">Bộ Phận:</label>
+                            <div class="col-sm-7">
+                                <select name="txtSearch_PhongBan" class="custom-select form-control">
+                                    <option value="0" selected>Tất Cả</option>
+                                    @foreach (var item in Model.PhongBans)
+                                    {
+                                        <option value="@item.ma_phong_ban">@item.ten_phong_ban</option>
+                                    }
+                                </select>
+                            </div>
 
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-primary">Xoá</button>
-                            <button type="button" class="btn btn-success pull-right">Tìm Kiếm</button>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary">Xoá</button>
+                                <button type="submit" class="btn btn-success pull-right">Tìm Kiếm</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-                <button type="button" class="col-sm-12 btn btn-success pull-right btnxuatPDF">Xuất PDF</button>
+                    </form>
+                }
                 <table class="table">
                     <thead>
                         <tr>
@@ -162,27 +165,27 @@
         <div id="back-top" style="display: block;"><a href="#top"> Về Đầu Trang </a></div>
     </footer>
     <script type='text/javascript'>
-		// hide #back-top first
-		$("#back-top").hide();
+        // hide #back-top first
+        $("#back-top").hide();
 
-    // fade in #back-top
-    $(function () {
-    	$(window).scroll(function () {
-    		if ($(this).scrollTop() > 100) {
-    			$('#back-top').fadeIn();
-    		} else {
-    			$('#back-top').fadeOut();
-    		}
-    	});
+        // fade in #back-top
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
 
-        // scroll body to 0px on click
-        $('#back-top a').click(function () {
-        	$('body,html').animate({
-        		scrollTop: 0
-        	}, 800);
-        	return false;
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
         });
-    });
     </script>
 </body>
 </html>

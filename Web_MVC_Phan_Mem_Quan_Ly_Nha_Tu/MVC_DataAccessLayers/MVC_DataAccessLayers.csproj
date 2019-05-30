@@ -53,6 +53,7 @@
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\Nguoi_Dung_DAL.cs" />
     <Compile Include="DAL\Pham_Nhan_DAL.cs" />
+    <Compile Include="DAL\Phong_Ban_DAL.cs" />
     <Compile Include="DAL\Tinh_Trang_Cham_Soc_Pham_Nhan_DAL.cs" />
     <Compile Include="DAL\Tinh_Trang_Thong_Tin_Pham_Nhan_DAL.cs" />
     <Compile Include="EntityFramework\DB_PrisonManagement.Context.cs">
