@@ -9,10 +9,25 @@ namespace MVC_DataAccessLayers.DAL
 {
     public class Tinh_Trang_Cham_Soc_Pham_Nhan_DAL : BaseDAL<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects>
     {
-        public Tinh_Trang_Cham_Soc_Pham_Nhan_Objects GetElementByDate(DateTime dateTime)
+        public List<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects> GetElmentsByDate(DateTime? date)
         {
-            
-            return null;
+            var data = _dbContext.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date(date);
+            List<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects>();
+            if (data == null)
+            {
+                return null;
+            }
+            foreach (var item in data)
+            {
+                Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_Objects();
+                obj.ma_so = item.ma_so;
+                obj.ho_ten = item.ho_ten;
+                obj.ngay_sinh = DateTime.ParseExact(item.ngaysinh, "dd/MM/yyyy", null);
+                obj.loai_suc_khoe = item.loai_suc_khoe;
+                obj.ghi_chu = item.ghi_chu;
+                lst.Add(obj);
+            }
+            return lst;
         }
 
         public override Tinh_Trang_Cham_Soc_Pham_Nhan_Objects GetElementByID(string id)
@@ -53,5 +68,6 @@ namespace MVC_DataAccessLayers.DAL
         {
             return _dbContext.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_InsertOrUpdate(OT.ma_so, OT.loai_suc_khoe, OT.khau_phan_an, OT.ngay_gio, true, OT.ghi_chu) > 0;
         }
+
     }
 }

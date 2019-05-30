@@ -15,6 +15,11 @@ namespace MVC_BusinessLogicLayers.BLL
             return new Tinh_Trang_Thong_Tin_Pham_Nhan_DAL().Insert(OT);
         }
 
+        public bool Update(string ma_so)
+        {
+            return new Tinh_Trang_Thong_Tin_Pham_Nhan_DAL().Update(ma_so);
+        }
+
         public override List<Tinh_Trang_Thong_Tin_Pham_Nhan_Objects> GetElements()
         {
             return new Tinh_Trang_Thong_Tin_Pham_Nhan_DAL().GetElements();

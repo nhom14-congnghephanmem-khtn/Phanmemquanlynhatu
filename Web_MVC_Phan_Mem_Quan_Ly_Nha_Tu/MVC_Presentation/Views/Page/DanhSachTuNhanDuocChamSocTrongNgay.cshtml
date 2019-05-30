@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<MVC_ValueObjects.Tinh_Trang_Cham_Soc_Pham_Nhan_Objects>
 @{
     Layout = null;
 }
@@ -121,7 +121,7 @@
                 <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> DANH SÁCH TÙ NHÂN ĐƯỢC CHĂM SÓC TRONG NGÀY</h3>
                 <div class="time-tn">
                     <label for="" class="col-md-2">Ngày:</label>
-                    <label for="" class="col-md-10">25/01/2019</label>
+                    <label for="" class="col-md-10">@ViewBag.ngay</label>
                 </div>
                 <table class="table">
                     <thead>
@@ -135,30 +135,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">A001</th>
-                            <td>Nguyễn Văn A</td>
-                            <td>25/01/1996</td>
-                            <td>Loại 1</td>
-                            <td>Cần đo lại huyết áp</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật SK</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A002</th>
-                            <td>Nguyễn Văn B</td>
-                            <td>25/01/1996</td>
-                            <td>Loại 1</td>
-                            <td>Cần đo lại huyết áp</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật SK</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">A003</th>
-                            <td>Nguyễn Văn C</td>
-                            <td>25/01/1996</td>
-                            <td>Loại 1</td>
-                            <td>Cần đo lại huyết áp</td>
-                            <td><button type="button" class="btn btn-success">Cập Nhật SK</button></td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.ma_so</th>
+                                <td>@item.ho_ten</td>
+                                <td>@item.ngay_sinh</td>
+                                <td>@item.loai_suc_khoe</td>
+                                <td>@item.ghi_chu</td>
+                                <td>@Html.ActionLink("Cập nhật SK", "CapNhatTinhTrangSucKhoePhamNhan", "Page", new { id = item.ma_so }, new { @class = "btn btn-success" })</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

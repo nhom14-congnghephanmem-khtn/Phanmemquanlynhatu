@@ -384,5 +384,23 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Hoat_Dong_Phong_Ban_Result>("SP_Hoat_Dong_Phong_Ban", ma_phong_inParameter);
         }
+    
+        public virtual int SP_Pham_Nhan_Update_Tinh_Trang_Tiep_Nhan(string ma_so)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Pham_Nhan_Update_Tinh_Trang_Tiep_Nhan", ma_soParameter);
+        }
+    
+        public virtual ObjectResult<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date_Result> SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date(Nullable<System.DateTime> ngay_gio)
+        {
+            var ngay_gioParameter = ngay_gio.HasValue ?
+                new ObjectParameter("ngay_gio", ngay_gio) :
+                new ObjectParameter("ngay_gio", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date_Result>("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date", ngay_gioParameter);
+        }
     }
 }

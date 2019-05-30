@@ -174,17 +174,21 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th scope="row">@item.ma_so</th>
-                                <td>@item.ho_ten</td>
-                                <td>@item.noi_sinh</td>
-                                <td>@item.muc_do_pham_toi</td>
-                                <td>
-                                    @item.thoi_gian_giam
-                                </td>
-                                <td>@item.loai_suc_khoe</td>
-                                <td><button type="button" class="btn btn-success">Tiếp nhận</button></td>
-                            </tr>
+                            using (Html.BeginForm("ThayDoiTinhTrangTiepNhan", "Page", FormMethod.Post, new { id = @item.ma_so }))
+                            {
+                                <tr>
+                                    <th>@item.ma_so</th>
+                                    <td>@item.ho_ten</td>
+                                    <td>@item.noi_sinh</td>
+                                    <td>@item.muc_do_pham_toi</td>
+                                    <td>
+                                        @item.thoi_gian_giam
+                                    </td>
+                                    <td>@item.loai_suc_khoe</td>
+                                    <td><button type="submit" class = "btn btn-success" onclick="return confirm('Bạn có muốn tiếp nhận phạm nhân mã số @item.ma_so')">Tiếp nhận</button></td>
+                                </tr>
+                            }
+
                         }
                     </tbody>
                 </table>
@@ -273,7 +277,7 @@
     $(function () {
         $('#datetimepicker1').datetimepicker();
         $('#datetimepicker2').datetimepicker();
-	});
+        });
     </script>
 </body>
 </html>

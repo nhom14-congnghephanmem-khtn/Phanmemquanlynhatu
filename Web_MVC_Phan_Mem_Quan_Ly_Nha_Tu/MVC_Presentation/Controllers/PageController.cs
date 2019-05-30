@@ -108,7 +108,10 @@ namespace MVC_Presentation.Controllers
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
             ViewBag.than_nhan = Session["ma_nhan_than"];
-            return View();
+            DateTime ngayhientai = DateTime.Now;
+            ViewBag.ngay = ngayhientai.ToString("dd/MM/yyyy");
+            List<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects> lst = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElmentsByDate(ngayhientai);
+            return View(lst);
         }
         public ActionResult GoiYKhauPhanAn()
         {
@@ -267,6 +270,17 @@ namespace MVC_Presentation.Controllers
         {
             var report = new ActionAsPdf("InDanhSachPhamNhanTiepNhanPhongThich", new { tinhtrang = Session["tinhtrang"], start = Session["start"], end = Session["end"] });
             return report;
+        }
+
+        [HttpPost]
+        public ActionResult ThayDoiTinhTrangTiepNhan(string ma_so)
+        {
+            if(ModelState.IsValid)
+            {
+                new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().Update(ma_so);
+                return RedirectToAction("DanhSachPhamNhanTiepNhanPhongThich");
+            }
+            return RedirectToAction("DanhSachPhamNhanTiepNhanPhongThich");
         }
     }
 }
