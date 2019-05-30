@@ -27,6 +27,10 @@ namespace MVC_BusinessLogicLayers.BLL
         public Tinh_Trang_Pham_Nhan_Objects GetTinhTrangPhamNhan(String maThanNhan)
         {
             var phamNhan = new Pham_Nhan_DAL().GetNguoiThan(maThanNhan);
+            if (phamNhan == null)
+            {
+                return null;
+            }
             SP_Pham_Nhan_Get_Tinh_Trang_Result tinhTrangPhamNhanObj = new Pham_Nhan_DAL().GetTinhTrangPhamNhan(phamNhan.ma_so);
             Tinh_Trang_Pham_Nhan_Objects ret = new Tinh_Trang_Pham_Nhan_Objects();
             if (ret != null)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_ValueObjects.Tinh_Trang_Pham_Nhan_Objects>
+﻿@model MVC_ValueObjects.Tinh_Trang_Pham_Nhan_Objects
 @{
     ViewBag.Title = "Tình Trạng Phạm Nhân";
 }
@@ -117,47 +117,51 @@
                     }
                 </ul>
             </div>
-            <div class="col-md-8 sidebar-right-cai-tao">
-                <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> TÌNH TRẠNG PHẠM NHÂN</h3>
+             @{
+                 if (Model != null)
+                 {
+                    <div class="col-md-8 sidebar-right-cai-tao">
+                        <h3 class="title-tinhtrang"><span class="glyphicon glyphicon-send"></span> TÌNH TRẠNG PHẠM NHÂN</h3>
 
-                <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
+                        <div for="inputPassword" class="col-sm-12 lable-mucdo">Thông Tin Phạm Nhân </div>
 
-                <form action="" method="" class="form-tt">
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Mã Số:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().MaSo)</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().HoTen)</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NgaySinh)</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NoiSinh)</label>
-                    </div>
-                </form>
-                <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Phạm Nhân</div>
+                        <form action="" method="" class="form-tt">
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Mã Số:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.MaSo)</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.HoTen)</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.NgaySinh)</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.NoiSinh)</label>
+                            </div>
+                        </form>
+                        <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Phạm Nhân</div>
 
-                <form action="" method="" class="form-tt">
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Giam Giữ:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().ThoiGianGiamGiu)</label>
+                        <form action="" method="" class="form-tt">
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Giam Giữ:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.ThoiGianGiamGiu)</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Sức Khoẻ:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.LoaiSucKhoe)</label>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Thăm Kế Tiếp:</label>
+                                <label class="col-sm-9">@Html.DisplayFor(m => Model.NgayThamBenhKeTiep)</label>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Sức Khoẻ:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().LoaiSucKhoe)</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Thăm Kế Tiếp:</label>
-                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NgayThamBenhKeTiep)</label>
-                    </div>
-                </form>
-
-            </div>
+                 }
+             }
         </div>
     </div>
     <footer>
