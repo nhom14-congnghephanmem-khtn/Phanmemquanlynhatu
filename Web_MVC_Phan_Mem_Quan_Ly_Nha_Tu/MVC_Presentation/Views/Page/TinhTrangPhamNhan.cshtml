@@ -50,16 +50,71 @@
         <div class="row">
             <div class="col-md-4 sidebar-left-cai-tao">
                 <ul>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangPhamNhan", "TinhTrangPhamNhan")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhan", "DanhSachPhamNhan")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay", "DanhSachTuNhanDuocChamSocTrongNgay")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan", "CapNhatTinhTrangSucKhoePhamNhan")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("ThemPhamNhan", "ThemPhamNhan")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich", "DanhSachPhamNhanTiepNhanPhongThich")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("HoatDongCuaBoPhan", "HoatDongCuaBoPhan")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("GoiYKhauPhanAn", "GoiYKhauPhanAn")</li>
-                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangCaiTao", "TinhTrangCaiTao")</li>
-
+                    @{
+                        if (ViewBag.ma_phong_ban == "1")
+                        {
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangPhamNhan", "TinhTrangPhamNhan")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhan", "DanhSachPhamNhan")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay", "DanhSachTuNhanDuocChamSocTrongNgay")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan", "CapNhatTinhTrangSucKhoePhamNhan")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("ThemPhamNhan", "ThemPhamNhan")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich", "DanhSachPhamNhanTiepNhanPhongThich")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("HoatDongCuaBoPhan", "HoatDongCuaBoPhan")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("GoiYKhauPhanAn", "GoiYKhauPhanAn")</li>
+                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangCaiTao", "TinhTrangCaiTao")</li>
+                        }
+                        else
+                        {
+                            if (ViewBag.ma_phong_ban == "2")
+                            {
+                                <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangPhamNhan", "TinhTrangPhamNhan")</li>
+                            }
+                            else
+                            {
+                                if (ViewBag.ma_phong_ban == "3")
+                                {
+                                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhan", "DanhSachPhamNhan")</li>
+                                }
+                                else
+                                {
+                                    if (ViewBag.ma_phong_ban == "4")
+                                    {
+                                        <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachTuNhanDuocChamSocTrongNgay", "DanhSachTuNhanDuocChamSocTrongNgay")</li>
+                                        <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("CapNhatTinhTrangSucKhoePhamNhan", "CapNhatTinhTrangSucKhoePhamNhan")</li>
+                                    }
+                                    else
+                                    {
+                                        if (ViewBag.ma_phong_ban == "5")
+                                        {
+                                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("ThemPhamNhan", "ThemPhamNhan")</li>
+                                            <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhanTiepNhanPhongThich", "DanhSachPhamNhanTiepNhanPhongThich")</li>
+                                        }
+                                        else
+                                        {
+                                            if (ViewBag.ma_phong_ban == "6")
+                                            {
+                                                <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("GoiYKhauPhanAn", "GoiYKhauPhanAn")</li>
+                                            }
+                                            else
+                                            {
+                                                if (ViewBag.ma_phong_ban == "7")
+                                                {
+                                                    <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("DanhSachPhamNhan", "DanhSachPhamNhan")</li>
+                                                }
+                                                else
+                                                {
+                                                    if (ViewBag.ma_phong_ban == "8")
+                                                    {
+                                                        <li><span class="glyphicon glyphicon-ok"></span>@Html.ActionLink("TinhTrangCaiTao", "TinhTrangCaiTao")</li>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 </ul>
             </div>
             <div class="col-md-8 sidebar-right-cai-tao">

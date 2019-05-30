@@ -16,6 +16,7 @@ namespace MVC_DataAccessLayers.DAL
             foreach (var item in data)
             {
                 Nguoi_Dung_Objects Ouser = new Nguoi_Dung_Objects();
+                Ouser.ma_so = item.ma_so;
                 Ouser.user_name = item.user_name;
                 Ouser.password = item.password;
                 return Ouser;
