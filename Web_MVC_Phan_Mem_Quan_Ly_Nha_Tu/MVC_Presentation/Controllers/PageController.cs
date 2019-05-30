@@ -57,12 +57,12 @@ namespace MVC_Presentation.Controllers
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
-            List<Pham_Nhan_Objects> obj = new Pham_Nhan_BLL().GetElements();
-            if (obj == null)
-            {
-                obj = new Pham_Nhan_BLL().GetElements();
-            }
-            return View(obj);
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            DateTime ngayPhongThichFrom = DateTime.ParseExact("01-01-1970", "dd-mm-yyyy", provider);
+            DateTime ngayPhongThichTo = DateTime.ParseExact("01-01-2500", "dd-mm-yyyy", provider);
+            List<Pham_Nhan_Search_Result_Objects> objs = new Pham_Nhan_BLL()
+                .GetDanhSachPhamNhan(0, ngayPhongThichFrom, ngayPhongThichTo);
+            return View(objs);
         }
         public ActionResult DanhSachPhamNhanQuanLy()
         {
