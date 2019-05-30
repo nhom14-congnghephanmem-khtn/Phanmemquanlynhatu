@@ -140,9 +140,11 @@ namespace MVC_Presentation.Controllers
             ViewBag.username = Session["username"];
             ViewBag.maNguoiThan = Session["ma_nhan_than"];
             var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan(ViewBag.maNguoiThan);
-            List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
-            lst.Add(tinhTrangPhamNhan);
-            return View(lst);
+            if (tinhTrangPhamNhan == null)
+            {
+                return View();
+            }
+            return View(tinhTrangPhamNhan);
         }
         [HttpGet]
         public ActionResult DanhSachPhamNhanTiepNhanPhongThich(DateTime? start, DateTime? end)
