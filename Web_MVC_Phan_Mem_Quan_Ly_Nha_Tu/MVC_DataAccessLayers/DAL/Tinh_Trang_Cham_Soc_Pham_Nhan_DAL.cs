@@ -9,6 +9,12 @@ namespace MVC_DataAccessLayers.DAL
 {
     public class Tinh_Trang_Cham_Soc_Pham_Nhan_DAL : BaseDAL<Tinh_Trang_Cham_Soc_Pham_Nhan_Objects>
     {
+        public Tinh_Trang_Cham_Soc_Pham_Nhan_Objects GetElementByDate(DateTime dateTime)
+        {
+            
+            return null;
+        }
+
         public override Tinh_Trang_Cham_Soc_Pham_Nhan_Objects GetElementByID(string id)
         {
             var data = _dbContext.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID(id);

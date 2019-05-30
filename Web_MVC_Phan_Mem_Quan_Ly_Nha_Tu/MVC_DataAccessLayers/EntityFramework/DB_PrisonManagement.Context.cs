@@ -357,5 +357,14 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_Get_Elements_With_Condition_Result>("SP_Pham_Nhan_Get_Elements_With_Condition", muc_do_pham_toiParameter, ngayPhongThichFromParameter, ngayPhongThichToParameter);
         }
+    
+        public virtual ObjectResult<SP_TKB_Cham_Soc_Pham_Nhan_Result> SP_TKB_Cham_Soc_Pham_Nhan(Nullable<System.DateTime> ngay)
+        {
+            var ngayParameter = ngay.HasValue ?
+                new ObjectParameter("ngay", ngay) :
+                new ObjectParameter("ngay", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_TKB_Cham_Soc_Pham_Nhan_Result>("SP_TKB_Cham_Soc_Pham_Nhan", ngayParameter);
+        }
     }
 }
