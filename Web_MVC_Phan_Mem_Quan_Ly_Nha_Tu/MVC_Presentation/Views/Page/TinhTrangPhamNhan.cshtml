@@ -1,6 +1,6 @@
-﻿
+﻿@model IEnumerable<MVC_ValueObjects.Tinh_Trang_Pham_Nhan_Objects>
 @{
-    Layout = null;
+    ViewBag.Title = "Tình Trạng Phạm Nhân";
 }
 
 <!DOCTYPE html>
@@ -70,19 +70,19 @@
                 <form action="" method="" class="form-tt">
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Mã Số:</label>
-                        <label class="col-sm-9">A001</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().MaSo)</label>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Họ Tên:</label>
-                        <label class="col-sm-9">Nguyễn Văn A</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().HoTen)</label>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Sinh:</label>
-                        <label class="col-sm-9">25/01/1993</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NgaySinh)</label>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Nơi Sinh:</label>
-                        <label class="col-sm-9">Hồ Chí Minh</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NoiSinh)</label>
                     </div>
                 </form>
                 <div for="inputPassword" class="col-sm-12 lable-mucdo">Tình Trạng Phạm Nhân</div>
@@ -90,15 +90,15 @@
                 <form action="" method="" class="form-tt">
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Giam Giữ:</label>
-                        <label class="col-sm-9">5 Tháng/ 5 Năm</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().ThoiGianGiamGiu)</label>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Sức Khoẻ:</label>
-                        <label class="col-sm-9">Loại 1</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().LoaiSucKhoe)</label>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-3 col-form-label">Ngày Thăm Kế Tiếp:</label>
-                        <label class="col-sm-9">25/01/2019</label>
+                        <label class="col-sm-9">@Html.DisplayFor(m => Model.First().NgayThamBenhKeTiep)</label>
                     </div>
                 </form>
 
@@ -156,27 +156,27 @@
         <div id="back-top" style="display: block;"><a href="#top"> Về Đầu Trang </a></div>
     </footer>
     <script type='text/javascript'>
-		// hide #back-top first
-		$("#back-top").hide();
+        // hide #back-top first
+        $("#back-top").hide();
 
-    // fade in #back-top
-    $(function () {
-    	$(window).scroll(function () {
-    		if ($(this).scrollTop() > 100) {
-    			$('#back-top').fadeIn();
-    		} else {
-    			$('#back-top').fadeOut();
-    		}
-    	});
+        // fade in #back-top
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-top').fadeIn();
+                } else {
+                    $('#back-top').fadeOut();
+                }
+            });
 
-        // scroll body to 0px on click
-        $('#back-top a').click(function () {
-        	$('body,html').animate({
-        		scrollTop: 0
-        	}, 800);
-        	return false;
+            // scroll body to 0px on click
+            $('#back-top a').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
         });
-    });
     </script>
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -184,9 +184,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
-			$(function () {
-				$('#datetimepicker1').datetimepicker();
-			});
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
     </script>
 </body>
 </html>

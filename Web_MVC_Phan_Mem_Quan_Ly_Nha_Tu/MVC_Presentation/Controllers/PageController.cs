@@ -77,7 +77,10 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult TinhTrangPhamNhan()
         {
-            return View();
+            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan("PC100");
+            List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
+            lst.Add(tinhTrangPhamNhan);
+            return View(lst);
         }
         [HttpGet]
         public ActionResult DanhSachPhamNhanTiepNhanPhongThich(DateTime? start, DateTime? end)

@@ -1,0 +1,13 @@
+Client: coreUI (jquery + boostrap) : done
+Server API                         : done
+List: 9. Gợi Ý Khẩu Phần Ăn        - Tuấn : 0% 
+Insert: 6. Thêm Phạm Nhân          - Trọng : 100%
+Tình trạng phạm nhân               - Thái : 0%
+Danh Sách Phạm Nhân                - Thái : 0%
+Danh Sách Phạm Nhân Chăm Sóc Trong Ngày - Tuấn : 0%
+Hoạt Động Của Bộ Phân - Tuấn : 0%
+Tình Trạng Cải Tạo - Tuấn : 0%
+Đăng nhập - Trọng : 80% 
+Cập Nhật Tình Trạng Sức Khỏe Phạm Nhân - Trọng : 100% 
+Xuất Danh Sách Phạm Nhân Tiếp Nhận, Phóng Thích - Trọng : 80% 
+

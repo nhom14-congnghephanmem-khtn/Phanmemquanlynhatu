@@ -4632,6 +4632,7 @@
 								"$ref": "AAAAAAFpzZg5lXecBi8="
 							},
 							"name": "loai_suc_khoe",
+							"documentation": "1. Loai 1\n2. Loai 2\n3. Loai 3\n",
 							"type": "number",
 							"length": 0,
 							"primaryKey": false,

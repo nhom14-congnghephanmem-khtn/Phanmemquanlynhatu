@@ -322,5 +322,23 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_GetElementByUserName_Result>("SP_Nguoi_Dung_GetElementByUserName", user_nameParameter);
         }
+    
+        public virtual ObjectResult<SP_Pham_Nhan_Get_Tinh_Trang_Result> SP_Pham_Nhan_Get_Tinh_Trang(string ma_so)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_Get_Tinh_Trang_Result>("SP_Pham_Nhan_Get_Tinh_Trang", ma_soParameter);
+        }
+    
+        public virtual ObjectResult<SP_Pham_Nhan_Get_TKB_Tham_Benh_Result> SP_Pham_Nhan_Get_TKB_Tham_Benh(string ma_so)
+        {
+            var ma_soParameter = ma_so != null ?
+                new ObjectParameter("ma_so", ma_so) :
+                new ObjectParameter("ma_so", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_Get_TKB_Tham_Benh_Result>("SP_Pham_Nhan_Get_TKB_Tham_Benh", ma_soParameter);
+        }
     }
 }

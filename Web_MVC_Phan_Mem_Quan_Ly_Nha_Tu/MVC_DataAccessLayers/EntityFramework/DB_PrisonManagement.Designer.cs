@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nguy Minh Trong\Desktop\Doan\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\EntityFramework\DB_PrisonManagement.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Study\16HCB\HK1\CNPM\Phanmemquanlynhatu\Web_MVC_Phan_Mem_Quan_Ly_Nha_Tu\MVC_DataAccessLayers\EntityFramework\DB_PrisonManagement.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
