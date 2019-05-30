@@ -158,10 +158,18 @@ namespace MVC_Presentation.Controllers
             }
             else
             {
-                if(Request["txtformday"] != null && Request["txttoday"] != null)
+                if (Request["txtformday"] == "" && Request["txttoday"] == "")
                 {
-                    start = Convert.ToDateTime(Request["txtformday"]);
-                    end = Convert.ToDateTime(Request["txttoday"]);
+                    start = null;
+                    end = null;
+                }
+                else
+                {
+                    if (Request["txtformday"] != null && Request["txttoday"] != null)
+                    {
+                        start = Convert.ToDateTime(Request["txtformday"]);
+                        end = Convert.ToDateTime(Request["txttoday"]);
+                    }
                 }
             }
             bool tinhtrangtiepnhan;
