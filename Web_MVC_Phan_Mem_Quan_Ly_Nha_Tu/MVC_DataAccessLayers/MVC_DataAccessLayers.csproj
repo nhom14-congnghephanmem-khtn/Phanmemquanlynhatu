@@ -76,6 +76,12 @@
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByID_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByPassword_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElementByUserName_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
@@ -83,6 +89,15 @@
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Pham_Nhan_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Pham_Nhan_Get_Elements_With_Condition_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Pham_Nhan_Get_Tinh_Trang_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Pham_Nhan_Get_TKB_Tham_Benh_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Phong_Ban_GetElementByID_Result.cs">

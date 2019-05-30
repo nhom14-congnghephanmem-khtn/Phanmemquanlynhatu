@@ -55,14 +55,38 @@ namespace MVC_Presentation.Controllers
         public ActionResult DanhSachPhamNhan()
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
-
+            ViewBag.username = Session["username"];
             List<Pham_Nhan_Objects> obj = new Pham_Nhan_BLL().GetElements();
             if (obj == null)
             {
                 obj = new Pham_Nhan_BLL().GetElements();
             }
             return View(obj);
-            
+        }
+        public ActionResult DanhSachPhamNhanQuanLy()
+        {
+            String strMucDoPhamToi = Request["txtSearch_MucDoPhamToi"];
+            String strNgayPhongThichFrom = Request["txtSearch_NgayPhongThichFrom"];
+            String strNgayPhongThichTo = Request["txtSearch_NgayPhongThichTo"];
+
+            if (String.IsNullOrEmpty(strMucDoPhamToi))
+            {
+                strMucDoPhamToi = "0";
+            }
+
+            if (String.IsNullOrEmpty(strNgayPhongThichFrom) || String.IsNullOrEmpty(strNgayPhongThichTo))
+            {
+                strNgayPhongThichFrom = "01/01/1970 00:00";
+                strNgayPhongThichTo = "01/01/2500 00:00";
+            }
+
+            int mucDoPhamToi = int.Parse(strMucDoPhamToi);
+            DateTime ngayPhongThichFrom = Convert.ToDateTime(strNgayPhongThichFrom);
+            DateTime ngayPhongThichTo = Convert.ToDateTime(strNgayPhongThichTo);
+            List<Pham_Nhan_Search_Result_Objects> objs = new Pham_Nhan_BLL()
+                .GetDanhSachPhamNhan(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
+    
+            return View(objs);
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
         {
@@ -78,7 +102,10 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult TinhTrangPhamNhan()
         {
-            return View();
+            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan("PC100");
+            List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
+            lst.Add(tinhTrangPhamNhan);
+            return View(lst);
         }
         [HttpGet]
         public ActionResult DanhSachPhamNhanTiepNhanPhongThich(DateTime? start, DateTime? end)

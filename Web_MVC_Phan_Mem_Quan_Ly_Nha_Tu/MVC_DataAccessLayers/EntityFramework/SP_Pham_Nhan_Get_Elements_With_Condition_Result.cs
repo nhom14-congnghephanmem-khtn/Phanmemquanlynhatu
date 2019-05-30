@@ -11,7 +11,7 @@ namespace MVC_DataAccessLayers.EntityFramework
 {
     using System;
     
-    public partial class SP_Pham_Nhan_GetElements_Result
+    public partial class SP_Pham_Nhan_Get_Elements_With_Condition_Result
     {
         public string ma_so { get; set; }
         public string ho_ten { get; set; }
@@ -24,5 +24,12 @@ namespace MVC_DataAccessLayers.EntityFramework
         public Nullable<System.DateTime> ngay_tiep_nhan { get; set; }
         public Nullable<bool> tinh_trang_tiep_nhan { get; set; }
         public string ma_nguoi_than { get; set; }
+        public decimal ID { get; set; }
+        public Nullable<int> loai_suc_khoe { get; set; }
+        public Nullable<decimal> so_ngay_da_giam_giu { get; set; }
+        public Nullable<System.DateTime> ngay_phong_thich { get; set; }
+        public Nullable<int> khau_phan_an { get; set; }
+        public string chi_tiet_khau_phan_an { get; set; }
+        public string ma_so_pham_nhan { get; set; }
     }
 }

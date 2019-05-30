@@ -23,6 +23,42 @@ namespace MVC_DataAccessLayers.DAL
             return null;
         }
 
+        public Nguoi_Dung_Objects GetElmentByUsername(string username)
+        {
+            var data = _dbContext.SP_Nguoi_Dung_GetElementByUserName(username);
+            foreach (var item in data)
+            {
+                Nguoi_Dung_Objects obj = new Nguoi_Dung_Objects();
+                obj.ma_so = item.ma_so;
+                obj.hoten = item.hoten;
+                obj.user_name = item.user_name;
+                obj.password = item.password;
+                obj.ma_phong_ban = item.ma_phong_ban;
+                obj.khau_phan_an = item.khau_phan_an;
+                obj.chi_tiet_khau_phan_an = item.chi_tiet_khau_phan_an;
+                return obj;
+            }
+            return null;
+        }
+
+        public Nguoi_Dung_Objects GetElmentByPassword(string password)
+        {
+            var data = _dbContext.SP_Nguoi_Dung_GetElementByPassword(password);
+            foreach (var item in data)
+            {
+                Nguoi_Dung_Objects obj = new Nguoi_Dung_Objects();
+                obj.ma_so = item.ma_so;
+                obj.hoten = item.hoten;
+                obj.user_name = item.user_name;
+                obj.password = item.password;
+                obj.ma_phong_ban = item.ma_phong_ban;
+                obj.khau_phan_an = item.khau_phan_an;
+                obj.chi_tiet_khau_phan_an = item.chi_tiet_khau_phan_an;
+                return obj;
+            }
+            return null;
+        }
+
         public Nguoi_Dung_Objects GetUserByMaPhongBan(string username)
         {
             var data = _dbContext.SP_Nguoi_Dung_GetUserByMa_Phong_Ban(username);

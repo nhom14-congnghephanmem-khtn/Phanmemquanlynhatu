@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.EntityClient;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MVC_DataAccessLayers.DAL;
+using MVC_DataAccessLayers.EntityFramework;
 using MVC_ValueObjects;
 
 namespace MVC_DataAccessLayers.DAL
@@ -122,6 +126,34 @@ namespace MVC_DataAccessLayers.DAL
                 lst.Add(obj);
             }
             return lst;
+        }
+
+        public SP_Pham_Nhan_Get_Tinh_Trang_Result GetTinhTrangPhamNhan(String maPhamNhan)
+        {
+            var data = _dbContext.SP_Pham_Nhan_Get_Tinh_Trang(maPhamNhan);
+            foreach (var item in data)
+            {
+                return item;
+            }
+            return null;
+        }
+
+        public SP_Pham_Nhan_Get_TKB_Tham_Benh_Result GetTkbThamBenh(String maPhamNhan)
+        {
+            var data = _dbContext.SP_Pham_Nhan_Get_TKB_Tham_Benh(maPhamNhan);
+           
+            foreach (var item in data)
+            {
+                return item;
+            }
+            
+            return null;
+        }
+
+        public List<SP_Pham_Nhan_Get_Elements_With_Condition_Result> GetDanhSachPhamNhan(int mucDoPhamToi, DateTime ngayPhongThichFrom, DateTime ngayPhongThichTo)
+        {
+            var data = _dbContext.SP_Pham_Nhan_Get_Elements_With_Condition(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
+            return data.ToList();
         }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="BLL\Pham_Nhan_BLL.cs" />
     <Compile Include="BLL\Tinh_Trang_Cham_Soc_Pham_Nhan_BLL.cs" />
     <Compile Include="BLL\Tinh_Trang_Thong_Tin_Pham_Nhan_BLL.cs" />
+    <Compile Include="Common\FormatUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

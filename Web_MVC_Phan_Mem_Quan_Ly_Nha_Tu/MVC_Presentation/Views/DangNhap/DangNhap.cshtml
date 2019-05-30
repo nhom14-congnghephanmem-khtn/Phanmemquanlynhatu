@@ -40,11 +40,6 @@
                     <li><a href="#" title="">Đường Dây Nóng</a></li>
                     <li><a href="#">Liên Hệ</a></li>
                 </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Đăng Nhập</a></li>
-
-                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
@@ -56,28 +51,31 @@
             </div>
             @using (Html.BeginForm("DangNhap", "DangNhap", FormMethod.Post))
             {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="col-md-6 login-right">
                     <h4>Đăng Nhập</h4>
-
                     <div class="login-form">
-                        <form action="" method="post">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1">User</span>
-                                    @Html.TextBoxFor(m => m.user_name, new { @type = "text", @class = "form-control", @placeholder = "Username"})
+                                    <span class="input-group-addon" id="basic-addon1">Tên đăng nhập</span>
+                                    @Html.TextBoxFor(m => m.user_name, new { @type = "text", @class = "form-control", @placeholder = "Username" })
+                                    
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1">PassWord</span>
-                                    @Html.TextBoxFor(m => m.password, new { @type = "text", @class = "form-control", @placeholder = "Username" })
+                                    <span class="input-group-addon" id="basic-addon1">Mật khẩu</span>
+                                    @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Password" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+                                <div class="input-group">
+                                    @Html.ValidationMessageFor(m => m.user_name, "", new { @class = "text-danger" }) <br />
+                                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </form>
-
                     </div>
                 </div>
             }
