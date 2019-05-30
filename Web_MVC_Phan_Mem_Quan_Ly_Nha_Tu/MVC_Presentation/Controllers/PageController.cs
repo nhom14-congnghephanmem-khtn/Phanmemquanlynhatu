@@ -16,6 +16,9 @@ namespace MVC_Presentation.Controllers
         [HttpGet]
         public ActionResult ThemPhamNhan()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             return View();
         }
         [HttpPost]
@@ -30,12 +33,18 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult TinhTrangCaiTao()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             return View();
         }
 
         [HttpGet]
         public ActionResult CapNhatTinhTrangSucKhoePhamNhan(string ma_so)
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             ma_so = Request["txtSearch_Text"];
             Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
             if (obj == null)
@@ -67,6 +76,9 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult DanhSachPhamNhanQuanLy()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             String strMucDoPhamToi = Request["txtSearch_MucDoPhamToi"];
             String strNgayPhongThichFrom = Request["txtSearch_NgayPhongThichFrom"];
             String strNgayPhongThichTo = Request["txtSearch_NgayPhongThichTo"];
@@ -93,14 +105,23 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             return View();
         }
         public ActionResult GoiYKhauPhanAn()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             return View();
         }
         public ActionResult HoatDongCuaBoPhan()
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             return View();
         }
         public ActionResult TinhTrangPhamNhan()
@@ -116,6 +137,9 @@ namespace MVC_Presentation.Controllers
         [HttpGet]
         public ActionResult DanhSachPhamNhanTiepNhanPhongThich(DateTime? start, DateTime? end)
         {
+            ViewBag.ma_phong_ban = Session["ma_phong_ban"];
+            ViewBag.username = Session["username"];
+            ViewBag.than_nhan = Session["ma_nhan_than"];
             var tinhtrang = Request["sltloai"];
             if (Request["txtformday"] == "" && Request["txttoday"] != "")
             {

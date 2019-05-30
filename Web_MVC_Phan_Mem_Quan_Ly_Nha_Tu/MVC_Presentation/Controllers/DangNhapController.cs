@@ -51,7 +51,7 @@ namespace MVC_Presentation.Controllers
                         {
                             if (phongban.ma_phong_ban == "2")
                             {
-                                return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
+                                return RedirectToAction("TinhTrangPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
                             }
                             else
                             {
@@ -63,19 +63,19 @@ namespace MVC_Presentation.Controllers
                                 {
                                     if (phongban.ma_phong_ban == "4")
                                     {
-                                        return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
+                                        return RedirectToAction("DanhSachTuNhanDuocChamSocTrongNgay", "Page", new { @id = ViewBag.ma_phong_ban });
                                     }
                                     else
                                     {
                                         if (phongban.ma_phong_ban == "5")
                                         {
-                                            return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
+                                            return RedirectToAction("DanhSachPhamNhanTiepNhanPhongThich", "Page", new { @id = ViewBag.ma_phong_ban });
                                         }
                                         else
                                         {
                                             if (phongban.ma_phong_ban == "6")
                                             {
-                                                return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
+                                                return RedirectToAction("GoiYKhauPhanAn", "Page", new { @id = ViewBag.ma_phong_ban });
                                             }
                                             else
                                             {
@@ -87,7 +87,7 @@ namespace MVC_Presentation.Controllers
                                                 {
                                                     if (phongban.ma_phong_ban == "8")
                                                     {
-                                                        return RedirectToAction("DanhSachPhamNhan", "Page", new { @id = ViewBag.ma_phong_ban });
+                                                        return RedirectToAction("TinhTrangCaiTao", "Page", new { @id = ViewBag.ma_phong_ban });
                                                     }
                                                 }
                                             }
