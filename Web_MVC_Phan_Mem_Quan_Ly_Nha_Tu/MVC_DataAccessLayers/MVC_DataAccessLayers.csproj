@@ -88,6 +88,9 @@
     <Compile Include="EntityFramework\SP_Nguoi_Dung_GetUserByMa_Phong_Ban_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Nguoi_Dung_Get_Than_Nhan_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Pham_Nhan_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>

@@ -22,10 +22,10 @@ namespace MVC_BusinessLogicLayers.BLL
             return new Pham_Nhan_DAL().GetElements();
         }
 
-        public Tinh_Trang_Pham_Nhan_Objects GetTinhTrangPhamNhan(String maPhamNhan)
+        public Tinh_Trang_Pham_Nhan_Objects GetTinhTrangPhamNhan(String maThanNhan)
         {
-
-            SP_Pham_Nhan_Get_Tinh_Trang_Result tinhTrangPhamNhanObj = new Pham_Nhan_DAL().GetTinhTrangPhamNhan(maPhamNhan);
+            var phamNhan = new Pham_Nhan_DAL().GetNguoiThan(maThanNhan);
+            SP_Pham_Nhan_Get_Tinh_Trang_Result tinhTrangPhamNhanObj = new Pham_Nhan_DAL().GetTinhTrangPhamNhan(phamNhan.ma_so);
             Tinh_Trang_Pham_Nhan_Objects ret = new Tinh_Trang_Pham_Nhan_Objects();
             if (ret != null)
             {
@@ -48,7 +48,7 @@ namespace MVC_BusinessLogicLayers.BLL
                         break;
                 }
 
-                var tkbThamBenh = new Pham_Nhan_DAL().GetTkbThamBenh(maPhamNhan);
+                var tkbThamBenh = new Pham_Nhan_DAL().GetTkbThamBenh(phamNhan.ma_so);
                 if (tkbThamBenh == null)
                 {
                     return ret;

@@ -155,5 +155,15 @@ namespace MVC_DataAccessLayers.DAL
             var data = _dbContext.SP_Pham_Nhan_Get_Elements_With_Condition(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
             return data.ToList();
         }
+
+        public SP_Nguoi_Dung_Get_Than_Nhan_Result GetNguoiThan(String maThanNhan)
+        {
+            var data = _dbContext.SP_Nguoi_Dung_Get_Than_Nhan(maThanNhan);
+            foreach (var item in data)
+            {
+                return item;
+            }
+            return null;
+        }
     }
 }

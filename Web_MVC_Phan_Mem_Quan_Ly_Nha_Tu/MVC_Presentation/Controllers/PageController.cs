@@ -104,7 +104,8 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult TinhTrangPhamNhan()
         {
-            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan("PC100");
+            String maNguoiThan = Session["ma_nguoi_than"].ToString();
+            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan(maNguoiThan);
             List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
             lst.Add(tinhTrangPhamNhan);
             return View(lst);

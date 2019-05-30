@@ -366,5 +366,14 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_TKB_Cham_Soc_Pham_Nhan_Result>("SP_TKB_Cham_Soc_Pham_Nhan", ngayParameter);
         }
+    
+        public virtual ObjectResult<SP_Nguoi_Dung_Get_Than_Nhan_Result> SP_Nguoi_Dung_Get_Than_Nhan(string ma_than_nhan)
+        {
+            var ma_than_nhanParameter = ma_than_nhan != null ?
+                new ObjectParameter("ma_than_nhan", ma_than_nhan) :
+                new ObjectParameter("ma_than_nhan", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Nguoi_Dung_Get_Than_Nhan_Result>("SP_Nguoi_Dung_Get_Than_Nhan", ma_than_nhanParameter);
+        }
     }
 }

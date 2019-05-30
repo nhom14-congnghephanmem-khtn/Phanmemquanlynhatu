@@ -10,6 +10,9 @@
           <Parameter Name="password" Type="varchar" Mode="In" />
           <Parameter Name="ma_phong_ban" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_Nguoi_Dung_Get_Than_Nhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma_than_nhan" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_Nguoi_Dung_GetElementByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ma_so" Type="varchar" Mode="In" />
         </Function>
@@ -194,8 +197,11 @@
             <Parameter Name="ngayPhongThichTo" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_TKB_Cham_Soc_Pham_Nhan" ReturnType="Collection(DB_PrisonManagementModel.SP_TKB_Cham_Soc_Pham_Nhan_Result)">
-            <Parameter Name="ngay" Mode="In" Type="DateTime" />
+          <Parameter Name="ngay" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_Nguoi_Dung_Get_Than_Nhan" ReturnType="Collection(DB_PrisonManagementModel.SP_Nguoi_Dung_Get_Than_Nhan_Result)">
+            <Parameter Name="ma_than_nhan" Mode="In" Type="String" />
+          </FunctionImport> 
         </EntityContainer>
         <ComplexType Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
           <Property Type="String" Name="user_name" Nullable="true" MaxLength="50" />
@@ -409,6 +415,19 @@
           <Property Type="Boolean" Name="tinh_trang" Nullable="true" />
           <Property Type="String" Name="ghi_chu" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="ma_so_pham_nhan" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_Nguoi_Dung_Get_Than_Nhan_Result">
+          <Property Type="String" Name="ma_so" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="ho_ten" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ngay_sinh" Nullable="true" Precision="23" />
+          <Property Type="String" Name="noi_sinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pham_toi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sdt_nguoi_than" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="tong_so_ngay_giam_giu" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="muc_do_pham_toi" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="ngay_tiep_nhan" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="tinh_trang_tiep_nhan" Nullable="true" />
+          <Property Type="String" Name="ma_nguoi_than" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -705,6 +724,23 @@
                 <ScalarProperty Name="tinh_trang" ColumnName="tinh_trang" />
                 <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
                 <ScalarProperty Name="ma_so_pham_nhan" ColumnName="ma_so_pham_nhan" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Nguoi_Dung_Get_Than_Nhan" FunctionName="DB_PrisonManagementModel.Store.SP_Nguoi_Dung_Get_Than_Nhan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Nguoi_Dung_Get_Than_Nhan_Result">
+                <ScalarProperty Name="ma_so" ColumnName="ma_so" />
+                <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+                <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+                <ScalarProperty Name="noi_sinh" ColumnName="noi_sinh" />
+                <ScalarProperty Name="pham_toi" ColumnName="pham_toi" />
+                <ScalarProperty Name="sdt_nguoi_than" ColumnName="sdt_nguoi_than" />
+                <ScalarProperty Name="tong_so_ngay_giam_giu" ColumnName="tong_so_ngay_giam_giu" />
+                <ScalarProperty Name="muc_do_pham_toi" ColumnName="muc_do_pham_toi" />
+                <ScalarProperty Name="ngay_tiep_nhan" ColumnName="ngay_tiep_nhan" />
+                <ScalarProperty Name="tinh_trang_tiep_nhan" ColumnName="tinh_trang_tiep_nhan" />
+                <ScalarProperty Name="ma_nguoi_than" ColumnName="ma_nguoi_than" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
