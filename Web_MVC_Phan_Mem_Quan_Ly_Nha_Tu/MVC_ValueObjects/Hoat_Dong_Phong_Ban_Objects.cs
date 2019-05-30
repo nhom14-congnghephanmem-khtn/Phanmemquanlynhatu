@@ -9,5 +9,6 @@ namespace MVC_ValueObjects
     public class Hoat_Dong_Phong_Ban_Objects
     {
         public List<Phong_Ban_Objects> PhongBans { get; set; }
+        public List<Hoat_Dong_Phong_Ban> HoatDongs { get; set; }
     }
 }

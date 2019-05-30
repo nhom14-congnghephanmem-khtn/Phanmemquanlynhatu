@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hoat_Dong_Phong_Ban.cs" />
     <Compile Include="Hoat_Dong_Phong_Ban_Objects.cs" />
     <Compile Include="Nguoi_Dung_Objects.cs" />
     <Compile Include="Pham_Nhan_Objects.cs" />

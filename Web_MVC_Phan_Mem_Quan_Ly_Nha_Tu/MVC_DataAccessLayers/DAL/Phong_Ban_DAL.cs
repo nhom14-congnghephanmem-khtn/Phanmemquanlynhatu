@@ -1,4 +1,5 @@
-﻿using MVC_ValueObjects;
+﻿using MVC_DataAccessLayers.EntityFramework;
+using MVC_ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,17 @@ namespace MVC_DataAccessLayers.DAL
                 phongBan.ma_phong_ban = item.ma_phong_ban;
                 phongBan.ten_phong_ban = item.ten_phong_ban;
                 ret.Add(phongBan);
+            }
+            return ret;
+        }
+
+        public List<SP_Hoat_Dong_Phong_Ban_Result> GetDanhSachHoatDongCuaPhongBan(String maPhongBan)
+        {
+            List<SP_Hoat_Dong_Phong_Ban_Result> ret = new List<SP_Hoat_Dong_Phong_Ban_Result>();
+           var data = _dbContext.SP_Hoat_Dong_Phong_Ban(maPhongBan);
+            foreach (var item in data)
+            {
+                ret.Add(item);
             }
             return ret;
         }

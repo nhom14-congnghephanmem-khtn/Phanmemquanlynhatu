@@ -70,7 +70,6 @@
                             <label for="" class="col-sm-2">Bộ Phận:</label>
                             <div class="col-sm-7">
                                 <select name="txtSearch_PhongBan" class="custom-select form-control">
-                                    <option value="0" selected>Tất Cả</option>
                                     @foreach (var item in Model.PhongBans)
                                     {
                                         <option value="@item.ma_phong_ban">@item.ten_phong_ban</option>
@@ -94,21 +93,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">Khám bệnh định kì</th>
-                            <td>Khám bệnh định kì cho tất cả các tù nhân</td>
-                            <td>25/01/2019</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Khám bệnh định kì</th>
-                            <td>Khám bệnh định kì cho tất cả các tù nhân</td>
-                            <td>25/01/2019</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Khám bệnh định kì</th>
-                            <td>Khám bệnh định kì cho tất cả các tù nhân</td>
-                            <td>25/01/2019</td>
-                        </tr>
+                        @foreach (var item in Model.HoatDongs)
+                        {
+                            <tr>
+                                <th scope="row">@item.TenHoatDong</th>
+                                <td>@item.NoiDung</td>
+                                <td>@item.Ngay</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

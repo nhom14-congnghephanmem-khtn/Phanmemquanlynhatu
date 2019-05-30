@@ -102,11 +102,14 @@ namespace MVC_Presentation.Controllers
         public ActionResult HoatDongCuaBoPhan()
         {
             var maPhongBan = Request["txtSearch_PhongBan"];
+            if (String.IsNullOrEmpty(maPhongBan))
+            {
+                maPhongBan = "1";
+            }
             Hoat_Dong_Phong_Ban_Objects ret = new Hoat_Dong_Phong_Ban_Objects();
             ret.PhongBans = new Phong_Ban_BLL().GetDanhSachPhongBan();
-
-
-
+            List<Hoat_Dong_Phong_Ban> hoatDong = new Phong_Ban_BLL().GetDanhSachHoatDong(maPhongBan);
+            ret.HoatDongs = hoatDong;
             return View(ret);
         }
         public ActionResult TinhTrangPhamNhan()
