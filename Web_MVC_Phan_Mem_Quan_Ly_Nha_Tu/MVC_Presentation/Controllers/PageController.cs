@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -76,13 +77,14 @@ namespace MVC_Presentation.Controllers
 
             if (String.IsNullOrEmpty(strNgayPhongThichFrom) || String.IsNullOrEmpty(strNgayPhongThichTo))
             {
-                strNgayPhongThichFrom = "01/01/1970 00:00";
-                strNgayPhongThichTo = "01/01/2500 00:00";
+                strNgayPhongThichFrom = "01-01-1970";
+                strNgayPhongThichTo = "01-01-2500";
             }
 
             int mucDoPhamToi = int.Parse(strMucDoPhamToi);
-            DateTime ngayPhongThichFrom = Convert.ToDateTime(strNgayPhongThichFrom);
-            DateTime ngayPhongThichTo = Convert.ToDateTime(strNgayPhongThichTo);
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            DateTime ngayPhongThichFrom = DateTime.ParseExact(strNgayPhongThichFrom, "dd-mm-yyyy", provider);
+            DateTime ngayPhongThichTo = DateTime.ParseExact(strNgayPhongThichTo, "dd-mm-yyyy", provider);
             List<Pham_Nhan_Search_Result_Objects> objs = new Pham_Nhan_BLL()
                 .GetDanhSachPhamNhan(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
     

@@ -101,7 +101,6 @@
                         <button type="submit" class="btn btn-success">Tìm Kiếm</button>
                     </div>
                 }
-
                 <table class="table">
                     <thead>
                         <tr>
@@ -212,8 +211,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('#datetimepicker1').datetimepicker();
-            $('#datetimepicker2').datetimepicker();
+            $('#datetimepicker1').datetimepicker({
+                format : 'DD-MM-YYYY'
+            });
+            $('#datetimepicker2').datetimepicker({
+                format: 'DD-MM-YYYY'
+            });
         });
     </script> -->
 
