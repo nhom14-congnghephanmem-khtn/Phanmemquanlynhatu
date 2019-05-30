@@ -107,8 +107,8 @@ namespace MVC_Presentation.Controllers
         {
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
-            String maNguoiThan = Session["ma_nhan_than"].ToString();
-            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan(maNguoiThan);
+            ViewBag.maNguoiThan = Session["ma_nhan_than"];
+            var tinhTrangPhamNhan = new Pham_Nhan_BLL().GetTinhTrangPhamNhan(ViewBag.maNguoiThan);
             List<Tinh_Trang_Pham_Nhan_Objects> lst = new List<Tinh_Trang_Pham_Nhan_Objects>();
             lst.Add(tinhTrangPhamNhan);
             return View(lst);
