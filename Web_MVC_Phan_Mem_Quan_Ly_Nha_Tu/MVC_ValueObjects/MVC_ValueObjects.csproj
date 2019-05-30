@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Nguoi_Dung_Objects.cs" />
     <Compile Include="Pham_Nhan_Objects.cs" />
+    <Compile Include="Pham_Nhan_Search_Result_Objects.cs" />
     <Compile Include="Phong_Ban_Objects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tinh_Trang_Cham_Soc_Pham_Nhan_Objects.cs" />

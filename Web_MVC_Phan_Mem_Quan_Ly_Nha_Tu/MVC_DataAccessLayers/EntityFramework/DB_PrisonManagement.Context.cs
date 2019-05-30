@@ -340,5 +340,22 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_Get_TKB_Tham_Benh_Result>("SP_Pham_Nhan_Get_TKB_Tham_Benh", ma_soParameter);
         }
+    
+        public virtual ObjectResult<SP_Pham_Nhan_Get_Elements_With_Condition_Result> SP_Pham_Nhan_Get_Elements_With_Condition(Nullable<decimal> muc_do_pham_toi, Nullable<System.DateTime> ngayPhongThichFrom, Nullable<System.DateTime> ngayPhongThichTo)
+        {
+            var muc_do_pham_toiParameter = muc_do_pham_toi.HasValue ?
+                new ObjectParameter("muc_do_pham_toi", muc_do_pham_toi) :
+                new ObjectParameter("muc_do_pham_toi", typeof(decimal));
+    
+            var ngayPhongThichFromParameter = ngayPhongThichFrom.HasValue ?
+                new ObjectParameter("ngayPhongThichFrom", ngayPhongThichFrom) :
+                new ObjectParameter("ngayPhongThichFrom", typeof(System.DateTime));
+    
+            var ngayPhongThichToParameter = ngayPhongThichTo.HasValue ?
+                new ObjectParameter("ngayPhongThichTo", ngayPhongThichTo) :
+                new ObjectParameter("ngayPhongThichTo", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Pham_Nhan_Get_Elements_With_Condition_Result>("SP_Pham_Nhan_Get_Elements_With_Condition", muc_do_pham_toiParameter, ngayPhongThichFromParameter, ngayPhongThichToParameter);
+        }
     }
 }

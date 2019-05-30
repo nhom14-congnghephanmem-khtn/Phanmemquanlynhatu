@@ -63,6 +63,31 @@ namespace MVC_Presentation.Controllers
             }
             return View(obj);
         }
+        public ActionResult DanhSachPhamNhanQuanLy()
+        {
+            String strMucDoPhamToi = Request["txtSearch_MucDoPhamToi"];
+            String strNgayPhongThichFrom = Request["txtSearch_NgayPhongThichFrom"];
+            String strNgayPhongThichTo = Request["txtSearch_NgayPhongThichTo"];
+
+            if (String.IsNullOrEmpty(strMucDoPhamToi))
+            {
+                strMucDoPhamToi = "0";
+            }
+
+            if (String.IsNullOrEmpty(strNgayPhongThichFrom) || String.IsNullOrEmpty(strNgayPhongThichTo))
+            {
+                strNgayPhongThichFrom = "01/01/1970 00:00";
+                strNgayPhongThichTo = "01/01/2500 00:00";
+            }
+
+            int mucDoPhamToi = int.Parse(strMucDoPhamToi);
+            DateTime ngayPhongThichFrom = Convert.ToDateTime(strNgayPhongThichFrom);
+            DateTime ngayPhongThichTo = Convert.ToDateTime(strNgayPhongThichTo);
+            List<Pham_Nhan_Search_Result_Objects> objs = new Pham_Nhan_BLL()
+                .GetDanhSachPhamNhan(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
+    
+            return View(objs);
+        }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
         {
             return View();

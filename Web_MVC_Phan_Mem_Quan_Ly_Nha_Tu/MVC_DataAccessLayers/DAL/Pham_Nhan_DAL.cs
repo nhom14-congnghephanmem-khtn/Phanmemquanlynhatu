@@ -149,5 +149,11 @@ namespace MVC_DataAccessLayers.DAL
             
             return null;
         }
+
+        public List<SP_Pham_Nhan_Get_Elements_With_Condition_Result> GetDanhSachPhamNhan(int mucDoPhamToi, DateTime ngayPhongThichFrom, DateTime ngayPhongThichTo)
+        {
+            var data = _dbContext.SP_Pham_Nhan_Get_Elements_With_Condition(mucDoPhamToi, ngayPhongThichFrom, ngayPhongThichTo);
+            return data.ToList();
+        }
     }
 }

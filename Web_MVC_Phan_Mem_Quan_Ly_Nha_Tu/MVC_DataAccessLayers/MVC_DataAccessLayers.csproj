@@ -91,6 +91,9 @@
     <Compile Include="EntityFramework\SP_Pham_Nhan_GetElements_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Pham_Nhan_Get_Elements_With_Condition_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Pham_Nhan_Get_Tinh_Trang_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>

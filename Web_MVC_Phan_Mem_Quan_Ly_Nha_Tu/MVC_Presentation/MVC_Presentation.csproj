@@ -222,6 +222,7 @@
     <Content Include="Views\Page\TinhTrangPhamNhan.cshtml" />
     <Content Include="Views\Page\DanhSachPhamNhanTiepNhanPhongThich.cshtml" />
     <Content Include="Views\Page\InDanhSachPhamNhanTiepNhanPhongThich.cshtml" />
+    <Content Include="Views\Page\DanhSachPhamNhanQuanLy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
