@@ -402,5 +402,14 @@ namespace MVC_DataAccessLayers.EntityFramework
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date_Result>("SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date", ngay_gioParameter);
         }
+    
+        public virtual ObjectResult<SP_Hoat_Dong_Phong_Ban1_Result> SP_Hoat_Dong_Phong_Ban1(string ma_phong_in)
+        {
+            var ma_phong_inParameter = ma_phong_in != null ?
+                new ObjectParameter("ma_phong_in", ma_phong_in) :
+                new ObjectParameter("ma_phong_in", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_Hoat_Dong_Phong_Ban1_Result>("SP_Hoat_Dong_Phong_Ban1", ma_phong_inParameter);
+        }
     }
 }

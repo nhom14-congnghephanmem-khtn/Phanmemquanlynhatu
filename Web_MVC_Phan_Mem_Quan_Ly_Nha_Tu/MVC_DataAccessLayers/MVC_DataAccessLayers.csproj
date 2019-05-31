@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PrisonManagement.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\SP_Hoat_Dong_Phong_Ban1_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\SP_Hoat_Dong_Phong_Ban_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
@@ -111,6 +114,9 @@
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Phong_Ban_GetElements_Result.cs">
+      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SP_Tinh_Trang_Cham_Soc_Pham_Nhan_GetElementByID_Result.cs">

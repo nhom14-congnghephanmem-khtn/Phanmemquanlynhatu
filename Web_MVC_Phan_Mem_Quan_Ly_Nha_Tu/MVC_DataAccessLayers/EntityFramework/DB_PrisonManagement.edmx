@@ -5,6 +5,9 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DB_PrisonManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_Hoat_Dong_Phong_Ban" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma_phong_in" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="username" Type="varchar" Mode="In" />
           <Parameter Name="password" Type="varchar" Mode="In" />
@@ -215,7 +218,10 @@
           <Parameter Name="ma_so" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date" ReturnType="Collection(DB_PrisonManagementModel.SP_Tinh_Trang_Cham_Soc_Pham_Nhan_By_Date_Result)">
-            <Parameter Name="ngay_gio" Mode="In" Type="DateTime" />
+          <Parameter Name="ngay_gio" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Hoat_Dong_Phong_Ban1" ReturnType="Collection(DB_PrisonManagementModel.SP_Hoat_Dong_Phong_Ban1_Result)">
+          <Parameter Name="ma_phong_in" Mode="In" Type="String" />
           </FunctionImport> 
         </EntityContainer>
         <ComplexType Name="SP_Nguoi_Dung_CheckLoginByMaPhongBan_Result">
@@ -458,6 +464,13 @@
           <Property Type="String" Name="ngaysinh" Nullable="true" MaxLength="4000" />
           <Property Type="Int32" Name="loai_suc_khoe" Nullable="true" />
           <Property Type="String" Name="ghi_chu" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="SP_Hoat_Dong_Phong_Ban1_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ten_hoat_dong" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="noi_dung" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ngay_dien_ra" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ma_phong_ban" Nullable="true" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -784,6 +797,17 @@
                 <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
                 <ScalarProperty Name="loai_suc_khoe" ColumnName="loai_suc_khoe" />
                 <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Hoat_Dong_Phong_Ban1" FunctionName="DB_PrisonManagementModel.Store.SP_Hoat_Dong_Phong_Ban">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_PrisonManagementModel.SP_Hoat_Dong_Phong_Ban1_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ten_hoat_dong" ColumnName="ten_hoat_dong" />
+                <ScalarProperty Name="noi_dung" ColumnName="noi_dung" />
+                <ScalarProperty Name="ngay_dien_ra" ColumnName="ngay_dien_ra" />
+                <ScalarProperty Name="ma_phong_ban" ColumnName="ma_phong_ban" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
