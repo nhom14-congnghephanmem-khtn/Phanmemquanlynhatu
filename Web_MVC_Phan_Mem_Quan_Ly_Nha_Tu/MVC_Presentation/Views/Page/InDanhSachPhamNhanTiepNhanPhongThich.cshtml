@@ -33,18 +33,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @if (Model != null)
                         {
-                            <tr>
-                                <th scope="row">@item.ma_so</th>
-                                <td>@item.ho_ten</td>
-                                <td>@item.noi_sinh</td>
-                                <td>@item.muc_do_pham_toi</td>
-                                <td>
-                                    @item.thoi_gian_giam
-                                </td>
-                                <td>@item.loai_suc_khoe</td>
-                            </tr>
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.ma_so</th>
+                                    <td>@item.ho_ten</td>
+                                    <td>@item.noi_sinh</td>
+                                    <td>@item.muc_do_pham_toi</td>
+                                    <td>
+                                        @item.thoi_gian_giam
+                                    </td>
+                                    <td>@item.loai_suc_khoe</td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>

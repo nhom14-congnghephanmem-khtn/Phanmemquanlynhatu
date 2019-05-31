@@ -181,7 +181,31 @@ namespace MVC_Presentation.Controllers
             List<Tinh_Trang_Thong_Tin_Pham_Nhan_Objects> lst;
             if (start == null && end == null)
             {
-                lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElements();
+                if (tinhtrang == "0")
+                {
+                    tinhtrangtiepnhan = false;
+                    end = DateTime.Now;
+                    Session["tinhtrang"] = tinhtrang;
+                    Session["start"] = start;
+                    Session["end"] = end;
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                }
+                else
+                {
+                    if(tinhtrang == "1")
+                    {
+                        tinhtrangtiepnhan = true;
+                        end = DateTime.Now;
+                        Session["tinhtrang"] = tinhtrang;
+                        Session["start"] = start;
+                        Session["end"] = end;
+                        lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
+                    }
+                    else
+                    {
+                        lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElements();
+                    }
+                }  
             }
             else
             {
@@ -195,8 +219,7 @@ namespace MVC_Presentation.Controllers
                     Session["tinhtrang"] = tinhtrang;
                     Session["start"] = start;
                     Session["end"] = end;
-                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
-                    
+                    lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);    
                 }
                 else
                 {
@@ -204,6 +227,7 @@ namespace MVC_Presentation.Controllers
                     lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElementsByDateAndTinhTrang(tinhtrangtiepnhan, start, end);
                     Session["start"] = start;
                     Session["end"] = end;
+                    Session["tinhtrang"] = tinhtrang;
                 }      
             }
             return View(lst);
@@ -246,7 +270,7 @@ namespace MVC_Presentation.Controllers
             }
             if (start == null && end == null)
             {
-                lst = new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().GetElements();
+                lst = null;
             }
             else
             {
@@ -279,6 +303,7 @@ namespace MVC_Presentation.Controllers
         {
             if(ModelState.IsValid)
             {
+                ma_so = Request["txtmaso"];
                 new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().Update(ma_so);
                 return RedirectToAction("DanhSachPhamNhanTiepNhanPhongThich");
             }
