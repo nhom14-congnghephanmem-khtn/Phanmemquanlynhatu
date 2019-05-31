@@ -137,6 +137,7 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                            <input type="hidden" name="txtmaso" value="@item.ma_so" />
                             <tr>
                                 <th scope="row">@item.ma_so</th>
                                 <td><input  type="text" name="txtmaso" value="@item.ma_so" /></td>

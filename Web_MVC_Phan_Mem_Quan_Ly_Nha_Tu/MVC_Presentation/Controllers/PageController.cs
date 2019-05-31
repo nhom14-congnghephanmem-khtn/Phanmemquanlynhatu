@@ -27,6 +27,7 @@ namespace MVC_Presentation.Controllers
             if(ModelState.IsValid)
             {
                 new Tinh_Trang_Thong_Tin_Pham_Nhan_BLL().Insert(obj);
+                TempData["Message"] = "<script>alert('Bạn đã thêm thành công');</script>";
                 return RedirectToAction("ThemPhamNhan");
             }
             return View();
@@ -45,11 +46,25 @@ namespace MVC_Presentation.Controllers
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
             ViewBag.than_nhan = Session["ma_nhan_than"];
-            ma_so = Request["txtSearch_Text"];
-            Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
-            if (obj == null)
+            ViewBag.ma_so = Session["ma_so"];
+            Tinh_Trang_Cham_Soc_Pham_Nhan_Objects obj;
+            if (Request["txtSearch_Text"] != "")
             {
-                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByTop();
+                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ViewBag.ma_so);
+                if (obj == null)
+                {
+                    obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByTop();
+                }
+                return View(obj);
+            }
+            else
+            {
+                ma_so = Request["txtSearch_Text"];
+                obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByID(ma_so);
+                if (obj == null)
+                {
+                    obj = new Tinh_Trang_Cham_Soc_Pham_Nhan_BLL().GetElementByTop();
+                }
             }
             return View(obj);
         }
@@ -105,6 +120,7 @@ namespace MVC_Presentation.Controllers
         }
         public ActionResult DanhSachTuNhanDuocChamSocTrongNgay()
         {
+            Session["ma_so"] = Request["txtmaso"];
             ViewBag.ma_phong_ban = Session["ma_phong_ban"];
             ViewBag.username = Session["username"];
             ViewBag.than_nhan = Session["ma_nhan_than"];

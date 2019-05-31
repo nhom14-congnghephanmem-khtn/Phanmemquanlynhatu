@@ -133,7 +133,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Họ Tên: </label>
-                        <div class="col-sm-9">           
+                        <div class="col-sm-9">
                             @Html.EditorFor(m => m.ho_ten, new { htmlAttributes = new { @class = "form-control", @id = "hotenphamnhan", @placeholder = "Họ Tên" } })
                             @Html.ValidationMessageFor(m => m.ho_ten, "", new { @class = "text-danger" })
                         </div>
@@ -189,12 +189,25 @@
                             new SelectListItem { Text = "Mức 2", Value = "2"},
                             new SelectListItem { Text = "Mức 3", Value = "3"}
                             }, new { @class = "custom-select form-control" })
-                            @Html.ValidationMessageFor(m => m.muc_do_pham_toi, "", new { @class = "text-danger"})
+                            @Html.ValidationMessageFor(m => m.muc_do_pham_toi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Ngày tiếp nhận: </label>
+                        <div class="col-sm-9">
+                            <div class='input-group date' id='datetimepicker2'>
+                                @Html.EditorFor(m => m.ngay_tiep_nhan, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(m => m.ngay_tiep_nhan, "", new { @class = "text-danger" })
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="tt-huy-capnhat">
                         <button type="reset" class="btn btn-primary">Huỷ</button>
-                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="submit" id="submit" class="btn btn-success">Thêm</button>
+                        @Html.Raw(TempData["Message"])
                     </div>
                 }
             </div>
@@ -280,10 +293,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
 	$(function () {
-		$('#datetimepicker1').datetimepicker();
-	});
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker();
+        });
     </script>
-
-
 </body>
 </html>
