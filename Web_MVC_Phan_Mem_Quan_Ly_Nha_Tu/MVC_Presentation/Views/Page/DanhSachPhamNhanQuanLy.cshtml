@@ -167,20 +167,22 @@
                             <th scope="col">Mức Độ Phạm Tội</th>
                             <th scope="col">Thời Gian Giam</th>
                             <th scope="col">Sức Khoẻ</th>
+                            <th scope="col">Chức Năng</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
             {
-                <tr>
-                    <th scope="row">@item.ma_so</th>
-                    <td>@item.ho_ten</td>
-                    <td>@item.noi_sinh</td>
-                    <td>@item.pham_toi</td>
-                    <td>@item.muc_do_pham_toi</td>
-                    <td>@item.thoi_gian_giam</td>
-                    <td>@item.loai_suc_khoe</td>
-                </tr>
+                        <tr>
+                            <th scope="row">@item.ma_so</th>
+                            <td>@item.ho_ten</td>
+                            <td>@item.noi_sinh</td>
+                            <td>@item.pham_toi</td>
+                            <td>@item.muc_do_pham_toi</td>
+                            <td>@item.thoi_gian_giam</td>
+                            <td>@item.loai_suc_khoe</td>
+                            <td>@Html.ActionLink("Cập nhật", "", "Page", new { id = item.ma_so }, new { @class = "btn btn-success" })</td>
+                        </tr>
             }
                     </tbody>
                 </table>

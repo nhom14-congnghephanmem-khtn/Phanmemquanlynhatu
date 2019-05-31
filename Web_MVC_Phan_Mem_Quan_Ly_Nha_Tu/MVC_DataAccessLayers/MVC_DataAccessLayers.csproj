@@ -71,9 +71,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PrisonManagement.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\SP_Hoat_Dong_Phong_Ban1_Result.cs">
-      <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
-    </Compile>
     <Compile Include="EntityFramework\SP_Hoat_Dong_Phong_Ban_Result.cs">
       <DependentUpon>DB_PrisonManagement.tt</DependentUpon>
     </Compile>
